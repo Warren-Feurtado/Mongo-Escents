@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { BrandModel } from './Models/brand.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap, catchError, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BrandsService {
 
-  private API_SERVER = "http://localhost:2000/brands";
+  private API_SERVER = `${environment.API_SERVER}/brands`;
   private HTTP_HEADERS = {
     headers: new HttpHeaders({'content-type': 'application/json'})
   };

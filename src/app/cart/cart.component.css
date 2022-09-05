@@ -54,8 +54,12 @@
 }
 
 .dec, .inc{
+    width: 20%;
+    /* padding: 0.1vw 0.3vw; */
     font-size: 1.5vw;
     cursor: pointer;
+    /* background-color: gray; */
+
 }
 
 .prodQty{

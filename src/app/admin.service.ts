@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap, catchError, of } from 'rxjs';
 import { AdminModel } from './Models/admin.model';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-  private API_SERVER = "http://localhost:2000/admin";
+  private API_SERVER = `${environment.API_SERVER}/admin`;
   private HTTP_HEADERS = {
     headers: new HttpHeaders({'content-type': 'application/json'})
   };

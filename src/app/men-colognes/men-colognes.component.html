@@ -7,49 +7,34 @@
         <div class="mainLeft">
             <div class="filterBox">
                 <details class="filter">
-                    <summary>Gender <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    <p><a routerLink="/mens-fragrances">Men</a></p>
-                    <p><a routerLink="/womens-fragrances">Women</a></p>
-                    <p><a routerLink="">Unisex</a></p>
+                    <summary>Shop Fragrances<i class="fa-solid fa-angle-down fltr"></i></summary>
+                    <p><a routerLink="/men-colognes">Colognes For Men</a></p>
+                    <p><a routerLink="/women-perfumes">Perfumes For Women</a></p>
+                    <p><a routerLink="/unisex-fragrances">Unisex Fragrances</a></p>
                 </details>
-                <details class="filter">
-                    <summary>Brands <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    <p><a routerLink="/mens-fragrances">Men</a></p>
-                    <p><a routerLink="/womens-fragrances">Women</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                </details>
-                <details class="filter">
-                    <summary>Gender <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    <p><a routerLink="/mens-page">Men</a></p>
-                    <p><a routerLink="/womens-page">Women</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                </details>
+
             </div>
         </div>
         
         <div class="mainRight">
             <div class="prodContain">
-                <div *ngFor="let product of products">
-                    <a class="" [routerLink]="['/products', product._id]">
-                        <div *ngIf="product.gender === 'men'">
-                            <div class="productCard">
-                                <div class="productimgBx">
-                                    <img [src]="product.imageSrc" [alt]="product.imageAlt">
-                                </div>
-                                <div class="productName">
-                                    {{product.prodName}}
-                                </div>
-                                <div class="productBrand">
-                                    By: {{product.brand}}
-                                </div>
-                                <div class="productDescription">
-                                    {{product.description}}
-                                </div>
-                                <div class="productPrice">
-                                    {{product.price}}
-                                </div>
+                <div *ngFor="let product of products; let i = index">
+                    <a class="" [routerLink]="['/details', product._id]">
+                        <div class="productCard">
+                            <div class="productimgBx">
+                                <img src="http://localhost:2000/{{product.imageSrc}}" [alt]="product.imageAlt">
+                            </div>
+                            <div class="productName">
+                                {{product.prodName}}
+                            </div>
+                            <div class="productBrand">
+                                By: {{itemBrand[i] && itemBrand[i].brandName}}
+                            </div>
+                            <div class="productDescription">
+                                {{product.description}}
+                            </div>
+                            <div class="productPrice">
+                                <span class="price">${{product.price }}</span> <span class="size">{{product.size }}</span>
                             </div>
                         </div>
                     </a>

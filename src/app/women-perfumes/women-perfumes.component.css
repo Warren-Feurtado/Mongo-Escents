@@ -41,8 +41,9 @@
 }
 
 .filter summary{
+    position: relative;
     width: 85%;
-    padding: 1vw 0 0.5vw 0;
+    padding: 1vw 0;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -50,6 +51,11 @@
     font-weight: bold;
     color: rgb(75, 75, 75);
     cursor: pointer;
+}
+
+summary .fltr{
+    float: right;
+    margin-top: 0.4vw;
 }
 
 .filter p{
@@ -86,10 +92,14 @@
     margin: auto;
 }
 
+.prodContain a{
+    color: rgb(0, 0, 0);
+}
+
 /*----------------------- PRODUCT CARDS -------------------------*/
 .prodContain .productCard{
     width: 16vw;
-    height: 27vw;
+    /* height: 27vw; */
     border: 1px solid rgb(230, 230, 230);
     border-radius: 5px;
     text-align: center; 
@@ -118,30 +128,58 @@
 }
 
 .productCard .productName{
+    height: 4vw;
+    /* border: 1px solid red; */
     font-size: 1.5vw;
     font-weight: 600;
-    margin-bottom: 0.2vw;
-    color: black;
+    /* margin-bottom: 0.5vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .productCard .productBrand{
+    height: 2vw;
     font-size: 1vw;
-    font-weight: 500;
-    margin-bottom: 0.5vw;
-    color: black;
+    font-weight: 600;
+    color: rgb(66, 139, 168);
+    /* margin-bottom: 0.5vw; */
+    /* border: 1px solid red; */
+
 }
 
 .productCard .productDescription{
+    height: 2vw;
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
     font-size: 0.8vw;
+    font-weight: 400;
+    color: rgb(41, 41, 41);
     margin-bottom: 1vw;
-    color: black;
+    /* border: 1px solid red; */
 }
 
 .productCard .productPrice{
-    font-size: 1.3vw;
-    font-weight: 500;
-    margin-bottom: 1vw;
-    color: black;
+    font-size: 1.8vw;
+    font-weight: 600;
+    margin-bottom: 0.5vw;
+    color: rgb(18, 98, 130);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.productPrice .price{
+    font-size: 1.8vw;
+    margin-left: 3vw;
+    
+}
+
+.productPrice .size{
+    font-size: 0.8vw;
+    margin-left: 0.5vw;
+    color: black;   
 }
 
 /* -------------- Section9 ------------------ */

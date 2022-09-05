@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartModel } from './Models/cart.model';
 import { catchError, of, Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private API_SERVER = "http://localhost:2000/cart";
+  private API_SERVER = `${environment.API_SERVER}/cart`;
   private HTTP_HEADERS = {
     headers: new HttpHeaders({'content-type': 'application/json'})
   };

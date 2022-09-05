@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BrandsService } from '../brands.service';
 import { ProductModel } from '../Models/product.model';
 import { ProductsService } from '../products.service';
+BrandsService
 
 
 @Component({
@@ -11,22 +13,33 @@ import { ProductsService } from '../products.service';
 export class UnisexFragrancesComponent implements OnInit {
 
   products: ProductModel[] = [];
+  itemBrand: any[] = [];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(
+    private productsService: ProductsService,
+    private brandsService: BrandsService
+    ) { }
+
 
   fetchUnisexFragrances(): void{
-
-  }
-
-  fetchAllFragrances(): void{
-    this.productsService.getAllProducts().subscribe((fetchedProducts: any) => {
+    this.productsService.getUnisexFragrances().subscribe((fetchedProducts: any) => {
       this.products = fetchedProducts.data;
+
+      this.products.forEach((data: any) => {
+        console.log(data.brand);
+
+        this.brandsService.getBrandById(data.brand).subscribe((brandData: any) => {
+          console.log(brandData);
+
+          this.itemBrand.push(brandData.data);
+        });
+      });
     });
   }
 
 
   ngOnInit(): void {
-    this.fetchAllFragrances();
+    this.fetchUnisexFragrances();
   }
 
 }

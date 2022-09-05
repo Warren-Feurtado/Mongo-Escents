@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { ProductModel } from './Models/product.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, tap, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  private API_SERVER = "http://localhost:2000/products";
+  private API_SERVER = `${environment.API_SERVER}/products`;
   private HTTP_HEADERS = {
     headers: new HttpHeaders({'content-type': 'application/json'})
   };
 
   constructor(private http: HttpClient) { }
 
-  
+
   getAllProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductModel[]>(this.API_SERVER).pipe(
       tap((data) => {
@@ -36,25 +37,25 @@ export class ProductsService {
 
   
   getMenColognes(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>(`${this.API_SERVER}/men-colognes`).pipe(
+    return this.http.get<ProductModel[]>(`${this.API_SERVER + "/men"}`).pipe(
       tap((data) => {
-        console.log(`Men Colognes retreived successfully! ${JSON.stringify(data)}`),
+        console.log(`Men Colognes retreived successfully!`, data),
         catchError(error => of([data]));
       })
     );
   };
 
   getWomenPerfumes(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>(`${this.API_SERVER}/women-perfumes`).pipe(
+    return this.http.get<ProductModel[]>(`${this.API_SERVER}/women`).pipe(
       tap((data) => {
-        console.log(`Women perfumes retreived successfully! ${JSON.stringify(data)}`),
+        console.log(`Women perfumes retreived successfully!`),
         catchError(error => of([data]));
       })
     );
   };
 
-  getUnisexPerfumes(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>(`${this.API_SERVER}/unisex-fragrances`).pipe(
+  getUnisexFragrances(): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>(`${this.API_SERVER}/unisex`).pipe(
       tap((data) => {
         console.log(`Unisex fragrances retreived successfully! ${JSON.stringify(data)}`),
         catchError(error => of([data]));
