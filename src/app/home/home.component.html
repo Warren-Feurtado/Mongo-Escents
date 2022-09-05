@@ -105,7 +105,7 @@
                 <div class="productCard" *ngFor="let product of products">
                     <a [routerLink]="['/details', product._id]">
                         <div class="productimgBx">
-                        <img src="http://localhost:2000/{{product.imageSrc}}" [alt]="product.imageAlt">
+                        <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" [alt]="product.imageAlt">
                         </div>
                         <div class="productName">
                             {{product.prodName}}
