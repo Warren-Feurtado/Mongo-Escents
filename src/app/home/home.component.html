@@ -43,7 +43,7 @@
         <h1>Our Top Brands</h1>
         <div class="brandLogosContain">
             <div class="brandLogos" *ngFor="let brand of brands | slice:0:12; let i = index;">
-                <a href="#"><img src="http://localhost:2000/{{brand.logoSrc}}" [alt]="brand.logoAlt"></a>
+                <a href="#"><img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" [alt]="brand.logoAlt"></a>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                 <div class="productCard" *ngFor="let product of products" style="margin: marginChange">
                     <a [routerLink]="['/details', product._id]">
                         <div class="productimgBx">
-                        <img src="http://localhost:2000/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                        <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="{{product.imageAlt}}">
                         </div>
                         <div class="productName">
                             {{product.prodName}}
