@@ -1,0 +1,11 @@
+{
+    "developement": {
+        "PORT": 2000,
+        "MONGODB_URI": "mongodb://localhost:27017/Escents",
+        "JWT_SECRET": "SECRET54321"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name"
+    }
+}

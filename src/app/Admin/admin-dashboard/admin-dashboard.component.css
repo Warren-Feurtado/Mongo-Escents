@@ -1,0 +1,221 @@
+.counts-widgets-contain{
+    width: 95%;
+    padding: 2vw 0;
+    margin: 1vw auto;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.counts-widgets-contain .counts-widget{
+    width: 23%;
+    /* height: 6vw; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid rgb(236, 236, 236);
+    /* margin-right: 2vw; */
+    padding: 1.5vw 1vw 1.5vw 1vw;
+}
+
+.widget-img{
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(134, 245, 255, 0.511);
+    border-radius: 50%;
+    padding: 0.5vw;
+    margin-right: 1vw;
+    /* align-items: center; */
+    /* border: 1px solid red; */
+}
+
+.img1{
+    background-color: rgba(134, 245, 255, 0.511);
+}
+
+.img2{
+    background-color: rgba(255, 213, 134, 0);
+    padding: 0;
+}
+
+.img3{
+    background-color: rgba(202, 8, 241, 0.39);
+    padding: 0;
+}
+
+.widget-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.img3 img{
+    width: 75%;
+    height: 75%;
+}
+
+.count-txt{
+    width: 70%;
+    height: 100%;
+    font-size: 1vw;
+    /* font-weight: 300; */
+    /* border: 1px solid red; */
+    /* padding-top: 1vw; */
+}
+
+.counts-widget h2{
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: rgb(87, 87, 87);
+}
+
+.counts-widget h3{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgb(23, 101, 131);
+}
+
+/*------------- Products and Brands Tables Section -------------------*/
+.prodBrands-tbls-container{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*------------- Products and Brands Table Headings -------------------*/
+.prodBrands-tbls-container .tbl-heading{
+    width: 100%;
+    padding: 1vw 2.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+.tbl-heading h3{
+    font-weight: 500;
+}
+
+.tbl-heading .view-more{
+    color: rgb(0, 123, 255);
+    font-size: 1vw;
+}
+
+.tbl-heading .view-more:hover{
+    text-decoration: underline;
+    color: rgba(48, 39, 210, 0.73);
+}
+
+/*------------- Products Table Container -------------------*/
+.prodBrands-tbls-container .prod-tbl-contain{
+    width: 65%;
+    height: fit-content;
+    padding: 1vw 0;
+    background-color: white;
+    /* border: 1px solid red; */
+    border-radius: 7px;
+    border: 1px solid rgb(236, 236, 236);
+    overflow: hidden;
+}
+
+.prodBrands-tbls-container .prod-tbl-bx{
+    height: 22vw;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/*------------- Products Table -------------------*/
+.prodBrands-tbls-container .prod-tbl{
+    width: 95%;
+    height: 10vw;
+    
+    margin: auto;
+    border-collapse: collapse;
+    /* border: 1px solid green; */
+    text-align: center;
+    font-size: 1vw;
+}
+
+.prodBrands-tbls-container th{
+    text-align: center;
+    padding: 1vw 0 0.5vw 0 ;
+    color: rgba(66, 114, 159, 0.815);
+    font-weight: 500;
+}
+
+.prod-tbl .product-td{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+.product-td .prod-tbl-img{
+    margin-right: 0.5vw;
+}
+
+.prod-tbl-img img{
+    width: 5vw;
+    /* height: 100%; */
+}
+
+.prod-desc{
+    text-align: left;
+}
+
+.prod-desc p{
+    width: 90%;
+    padding-left: 2vw;
+}
+
+.prod-tbl tr td, .brand-tbl tr td{
+    padding: 0.5vw;
+    /* border: 1px solid red; */
+}
+
+.prod-gender p{
+    padding-left: 2vw;
+}
+
+/*------------- Brands Table Container -------------------*/
+.prodBrands-tbls-container .brand-tbl-contain{
+    width: 33%;
+    height: fit-content;
+    padding: 1vw 0;
+    /* overflow: hidden; */
+    /* padding: 1vw; */
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid rgb(236, 236, 236);
+}
+
+.brand-tbl-bx{
+    height: 19vw;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.brand-tbl-contain .brand-tbl{
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+.brand-logo-contain{
+    width: 8vw;
+    height: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+}
+
+.brand-logo-contain img{
+    width: 100%;
+}
+

@@ -1,0 +1,234 @@
+
+<div class="body_contain">
+    <!--------- DASHBOARD MENU --------->
+    <section class="dash_menu " id="dash_menu" *ngIf="toggle">
+        <a routerLink="/" class="links">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="../assets/Images/E-scents-logo-2-removebg-preview.png" alt="">
+                </div>
+                <!-- <div class="logo_txt">
+                    <h1>EScents</h1>
+                </div> -->
+            </div>
+        </a>
+        <div class="profil_info">
+            <div class="profile_photo">
+                <img src="https://images.unsplash.com/photo-1627161684458-a62da52b51c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=549&q=80" alt="">
+            </div>
+            <h4 >John Doe</h4>
+            <span >Admin</span>
+        </div>
+        <div class="dash_opts">
+                    
+            <details class="option">
+                <summary><a routerLink="/admin"><i class="fa-solid fa-house-user"></i>Dashboard</a></summary>
+            </details>
+    
+            <details class="option">
+                <summary><i class="fa-solid fa-bag-shopping"></i>Manage Products<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/product" title="Add a new product"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/products" title="View all products"><i class="fa-solid fa-spray-can"></i> Product List</a></p>
+            </details>
+
+            <details class="option">
+                <summary><i class="fa-solid fa-splotch"></i>Manage Brands<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/brand" title="Add a new brand"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/brands" title="View all brands"><i class="fa-solid fa-list-ul"></i> Brand List</a></p>
+            </details>
+
+            <button class="logOut" (click)="logOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i> log out</button>
+        </div>        
+    </section>
+        
+    
+    <!--------- BODY / MAIN --------->
+    <section class="body_main" id="body_main">
+        <div class="top_bar">
+            <div (click)="hideMenu()" title="Side Bar" class="menu_bars ">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- <div class="search">
+                <input type="search" placeholder="Type to search">
+                <button class="searchIcon"><mat-icon >search</mat-icon></button>
+            </div> -->
+        </div>
+    
+        <h1>Dashboard</h1>
+
+        <div class="counts-widgets-contain">
+            <div class="counts-widget">
+                <div class="widget-img img1">
+                    <img src="../assets/Images/icons8-invert-files-selection-96.png" alt="">
+                </div>
+                <div class="count-txt">
+                    <h2><b>{{productCount}}</b></h2>
+                    <h3>Products</h3>
+                </div>
+            </div>
+
+            <div class="counts-widget">
+                <div class="widget-img img2">
+                    <img src="../assets/Images/icons8-star-67.png" alt="">
+                </div>
+                <div class="count-txt">
+                    <h2><b>{{brandCount}}</b></h2>
+                    <h3>Brands</h3>
+                </div>
+                
+            </div>
+            <div class="counts-widget">
+                <div class="widget-img img3">
+                    <img src="../assets/Images/icons8-done-64.png" alt="">
+                </div>
+                <div class="count-txt">
+                    <h2><b>{{brandCount}}</b></h2>
+                    <h3>subscribers</h3>
+                </div>
+                
+            </div>
+            <div class="counts-widget">
+                <div class="widget-img img2">
+                    <img src="../assets/Images/icons8-star-67.png" alt="">
+                </div>
+                <div class="count-txt">
+                    <h2><b>{{brandCount}}</b></h2>
+                    <h3>Admin</h3>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="prodBrands-tbls-container">
+            <div class="prod-tbl-contain">
+                <div class="tbl-heading">
+                    <!-- <div class="tbl-title"> -->
+                        <h3>Products-List</h3>
+                        <a routerLink="/admin/products" class="view-more" title="View and manage products">Manage </a>
+                    <!-- </div> -->
+                </div>
+                <div class="prod-tbl-bx">
+                    <table class="prod-tbl">
+                        <tr>
+                            <th >Product</th>
+                            <!-- <th>Product Name</th> -->
+                            <th>Brand</th>
+                            <th style="padding-left: 2vw;">Gender</th>
+                            <th>Description</th>
+                            <!-- <th>Price</th> -->
+                            <!-- <th>Actions</th> -->
+                        </tr>
+                        
+                        <tr *ngFor="let product of products">
+                            <td class="product-td">
+                                <div class="prod-tbl-img">
+                                    <img src="http://localhost:2000/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                                </div>
+                                <div class="prod-name" >
+                                    {{product.prodName}}
+                                </div>
+                            </td>
+                            <td class="prod-brand">
+                                {{product.product_brand[0].brandName}}
+                            </td>
+                            <td class="prod-gender">
+                                <p>{{product.gender}}</p>
+                            </td>
+                            <td class="prod-desc">
+                                <p>{{product.description}}</p>
+                            </td>
+                            <!-- <td>
+                                <h3>Price</h3>
+                            </td> -->
+                                <!-- <td>
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </td> -->
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="brand-tbl-contain">
+                <div class="tbl-heading">
+                    <!-- <div class="tbl-title"> -->
+                        <h3>Brands-List</h3>
+                        <a routerLink="/admin/brands" class="view-more" title="View and manage brands">Manage </a>
+                    <!-- </div> -->
+                </div>
+                <div class="brand-tbl-bx">
+                    <table class="brand-tbl">
+                        <tr *ngFor="let brand of brands">
+                            <td>
+                                <div class="brand-logo-contain">
+                                    <img src="http://localhost:2000/{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+                                </div>
+                            </td>
+                            <td>
+                                {{brand.brandName}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <div class="popUp-modal-bg">
+        <div class="modal-mssg-bx scss_mssg">
+            <span class="closeX" onclick="closeX()"><i class="fa-solid fa-xmark"></i></span>
+            <h3>Welcome<br>Admin</h3>
+        </div>
+    </div>  -->
+</div>
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Test Brands List Display</h1>
+<ul>
+    <li *ngFor="let brand of brands">
+        <b>Brand Name:</b>{{brand.brandName}}<br>
+        <b>Brand Logo:</b><br><img src="{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+    </li>
+</ul>
+
+
+<h1>Test Products List Display</h1>
+<ul>
+    <li *ngFor="let product of products; ">
+        <b>Product Name: {{product.prodName}}</b><br>
+        <b>Product Brand:{{product.product_brand[0].brandName}}</b><br><br>
+
+    </li>
+</ul> -->

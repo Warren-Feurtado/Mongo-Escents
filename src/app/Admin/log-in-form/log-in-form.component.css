@@ -1,0 +1,101 @@
+/*----------------------- LOG IN FORM-MODAL -------------------------*/
+.container{
+    width: 100vw;
+    padding: 7vw 0;
+    background: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+form{
+    width: 25vw;
+    background: rgb(255, 255, 255);
+    padding: 2vw;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-left: 1px solid rgba(255, 255, 255, 0.205);
+    border-top: 1px solid rgba(255, 255, 255, 0.205);
+    box-shadow: 5px 5px 10px 5px rgba(28, 113, 147, 0.253);
+    font-family: 'Montserrat', sans-serif;
+}
+
+form h1{
+    text-align: center;
+    color: rgb(28, 114, 147);
+    font-size: 2vw;
+    padding-bottom: 0.9vw;
+    margin-bottom: 2vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+
+}
+
+.inptBx{
+    margin: 0.5vw 0 0.8vw 0;
+    width: 100%;
+}
+
+.inptBx label{
+    color: rgb(0, 0, 0);
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.inptBx input{
+    width: 100%;
+    height: 2.9vw;
+    margin-top: 0.3vw;
+    background: rgba(233, 233, 233, 0.61);
+    border: none;
+    padding: 0 1vw;
+    color: rgb(80, 80, 80);
+    font-size: 1vw;
+}
+input:focus{
+    outline: 2px solid rgb(28, 114, 147);
+}
+
+.inptBx .alertBx{
+    height: 1vw;
+    color: red;
+    font-size: 0.8vw;
+    margin: 0.3vw 0 0 0.5vw;
+}
+
+button{
+    width: 100%;
+    height: 3vw;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    background-color: rgb(28, 114, 147);
+    color: rgb(255, 255, 255);
+    margin: 0.5vw 0 1vw 0;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+}
+
+button:disabled{
+    cursor: not-allowed;
+    background-color: rgb(124, 124, 34);
+    color: rgba(194, 194, 194, 0.712);
+}
+
+form p{
+    color: rgb(0, 0, 0);
+    margin-top: 1vw;
+    font-size: 1vw;
+}
+
+form p a{
+    cursor: pointer;
+    color: rgb(28, 114, 147);
+}
+
+form p a:hover{
+    text-decoration: underline;
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.774);
+}

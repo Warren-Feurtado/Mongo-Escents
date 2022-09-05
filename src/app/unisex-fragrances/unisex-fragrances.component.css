@@ -1,0 +1,201 @@
+
+.container{
+    width: 100vw;
+    padding-top: 4.5%;
+}
+
+.heading{
+    width: fit-content;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 0 auto 4vw auto;
+}
+.heading::after{
+    content: "";
+    height: 0.3vw;
+    width: 3vw;
+    margin: 0.3vw 0 0 0;
+    background: rgb(28, 114, 147); 
+    display: block;
+}
+
+.container .flexbox{
+    width: 100vw;
+    display: flex;
+    padding: 0 1% 0 1.5%;
+}
+
+.flexbox .mainLeft{
+    width: 23vw;
+}
+
+/*----------------------- FILTER BOX -------------------------*/
+.mainLeft .filterBox{
+    width: 85%;
+    margin-left: 2.5vw;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.filterBox .filter{
+    width: 100%;
+}
+
+.filter summary{
+    width: 85%;
+    padding: 1vw 0 0.5vw 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+}
+
+.filter p{
+    width: 100%;
+    padding: 0 0 8% 7.5%;
+    font-size: 0.8vw;
+}
+
+.filter p:hover{
+    text-decoration: underline;
+}
+
+.filter p:last-child{
+    width: 100%;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.filter p a{
+    color: rgb(124, 124, 124);
+}
+
+/*----------------------- MAIN RIGHT -------------------------*/
+.flexbox .mainRight{
+    width: 77vw;
+    display: flex;
+}
+
+/*----------------------- PRODUCTS -------------------------*/
+.mainRight .prodContain{
+    width: 95%;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+/*----------------------- PRODUCT CARDS -------------------------*/
+.prodContain .productCard{
+    width: 16vw;
+    height: 27vw;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    text-align: center; 
+    margin: 0 0 1vw 1vw;
+    padding: 0 0.5vw 1vw 0.5vw;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+.productCard:hover{
+    box-shadow: 0px 0px 8px 2px rgba(4, 113, 202, 0.164);
+}
+.productCard:hover img{
+    transform: scale(1.1);
+}
+
+.productCard .productimgBx{
+    width: 90%;
+    margin: auto;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.productimgBx img{
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.productCard .productName{
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin-bottom: 0.2vw;
+    color: black;
+}
+
+.productCard .productBrand{
+    font-size: 1vw;
+    font-weight: 500;
+    margin-bottom: 0.5vw;
+    color: black;
+}
+
+.productCard .productDescription{
+    font-size: 0.8vw;
+    margin-bottom: 1vw;
+    color: black;
+}
+
+.productCard .productPrice{
+    font-size: 1.3vw;
+    font-weight: 500;
+    margin-bottom: 1vw;
+    color: black;
+}
+
+/* -------------- Section9 ------------------ */
+.sect9{
+    width: 100vw;
+    height: 30vw;
+    margin: 2vw auto;
+    background: url('https://cdn.shopify.com/s/files/1/0269/7763/2389/files/newsletter_banner.jpg?v=1636134871');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect9 .newsletterContain{
+    text-align: center;
+}
+
+.sect9 .newsletterContain h1{
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+
+}
+
+.newsletterContain h1 span{
+    font-weight: 400;
+}
+
+.sect9 .newsletterContain p{
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+}
+
+.newsletterContain .newsletterInput{
+    height: 3vw;
+}
+
+.newsletterInput input{
+    height: 100%;
+    width: 30vw;
+    font-size: 1.1vw;
+    padding-left: 1vw;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgb(117, 117, 117);
+}
+
+.newsletterInput button{
+    height: 100%;
+    width: 10vw;
+    font-size: 1.1vw;
+    color: white;
+    background: black;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid rgb(138, 138, 138);
+    border-left: none;
+    cursor: pointer;
+}

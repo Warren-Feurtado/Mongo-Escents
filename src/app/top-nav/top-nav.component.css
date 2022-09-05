@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Light&family=Niconne&display=swap');
+
+.topBar{
+    width: 100%;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(28, 114, 147);
+}
+
+.topBar span{
+    color: white;
+    font-size: 1.1vw;
+    font-weight: 600;
+}
+
+nav{
+    width: 100%;
+    background: #fffefe;
+    padding: 0.1vw 0;
+    border-bottom: 0.3vw solid #1c7293;
+    box-shadow: 2px 4px 5px 1px rgba(0, 0, 0, 0.795); 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    width: 10vw;
+    height: 5vw;
+    /* margin-left: 3vw; */
+    transform: scale(0.8, 0.8);
+}
+
+.logo img{
+    width: 100%;
+   height: 100%;
+
+}
+
+nav .navLiksContain{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 1.5% 0 0 1vw; */
+    margin: 1.5% 0 0 0;
+}
+
+.navLiksContain .links{
+    font-size: 1.1vw;
+    font-weight: 600;
+    padding: 1vw 0.5vw;
+    margin: 0 0.8vw;
+    cursor: pointer;
+    color: rgb(59, 59, 59);
+    /* margin: 0 5%; */
+}
+
+.links::after, .active::after{
+    content: "";
+    height: 0.2vw;
+    width: 0%;
+    margin-top: 0.4vw;
+    background: rgb(28, 114, 147); 
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.active::after{
+    width: 100%;
+}
+
+.links:hover::after{
+    width: 100%;
+}
+
+nav .search{
+    width: 20vw;
+    height: 2.5vw;
+    margin: 0.3vw 0 0 7vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search input[type="search"]{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    padding-left: 0.5vw;
+    font-size: 1.1vw;
+}
+
+.search .searchIcon{
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(28, 114, 147);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.863);
+}
+
+.searchIcon mat-icon{
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .member{
+    height: 100%;
+    /* margin: 0.5vw 0 0 9vw; */
+    margin: 0.5vw 0 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.member .account{
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgb(182, 182, 182);
+    padding: 0.3vw 0.5vw;
+    margin-right: 1vw;
+}
+
+.account .memberIcon{
+    margin-right: 0.5vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.memberIcon mat-icon{
+    margin-right: 0.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2vw;
+    color: rgb(0, 0, 0);
+}
+.memberIcon span{
+    color: rgb(59, 59, 59);
+}
+
+.member .cart{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .cartIcon{
+    font-weight: 500;
+    color: black;
+}
+
+.cartIcon mat-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.cart .cartAmount{
+    width: 1.2vw;
+    height: 1.2vw;
+    position: absolute;
+    font-size: 0.8vw;
+    top: -1vw;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #e40606;
+    color: white;
+}

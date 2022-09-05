@@ -1,0 +1,177 @@
+
+<div class="body_contain">
+    <!--------- DASHBOARD MENU --------->
+    <section class="dash_menu " id="dash_menu" *ngIf="toggle">
+        <a routerLink="/" class="links">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="../assets/Images/E-scents-logo-2-removebg-preview.png" alt="">
+                </div>
+                <!-- <div class="logo_txt">
+                    <h1>EScents</h1>
+                </div> -->
+            </div>
+        </a>
+        <div class="profil_info">
+            <div class="profile_photo">
+                <img src="https://images.unsplash.com/photo-1627161684458-a62da52b51c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=549&q=80" alt="">
+            </div>
+            <h4 >John Doe</h4>
+            <span >Admin</span>
+        </div>
+        <div class="dash_opts">
+                    
+            <details class="option">
+                <summary><a routerLink="/admin"><i class="fa-solid fa-house-user"></i>Dashboard</a></summary>
+            </details>
+    
+            <details class="option">
+                <summary><i class="fa-solid fa-bag-shopping"></i>Manage Products<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/product" title="Add a new product"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/products" title="View all products"><i class="fa-solid fa-spray-can"></i> Product List</a></p>
+            </details>
+
+            <details class="option">
+                <summary><i class="fa-solid fa-splotch"></i>Manage Brands<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/brand" title="Add a new brand"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/brands" title="View all brands"><i class="fa-solid fa-list-ul"></i> Brand List</a></p>
+            </details>
+
+            <button class="logOut" (click)="logOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i> log out</button>
+        </div>        
+    </section>
+        
+    
+    <!--------- BODY / MAIN --------->
+    <section class="body_main" id="body_main">
+        <div class="top_bar">
+            <div (click)="hideMenu()" title="Side Bar" class="menu_bars ">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="search">
+                <input type="search" placeholder="Type to search">
+                <button class="searchIcon"><mat-icon >search</mat-icon></button>
+            </div>
+        </div>
+    
+        <h1>Products</h1>
+
+        <h3 (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</h3>
+
+        <div class="container-background">
+            <div class="tbl-heading">
+                <!-- <div class="tbl-title"> -->
+                    <h3>Products-List</h3>
+                    <a routerLink="/admin/add/product" class="add-btn"><i class="fa-solid fa-circle-plus"></i>Add Product</a>
+                <!-- </div> -->
+            </div>
+            <div class="product-container">
+                <div class="product-bx" *ngFor="let product of products">
+                    <div class="prod-card">
+                        <a routerLink="">
+                            <div class="product-img">
+                                <img src="http://localhost:2000/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                            </div>
+                        </a>
+                        <div class="prod-card-txt">
+                            <div class="prod-name">
+                                <h3>{{product.prodName}}</h3>
+                            </div>
+                            <div class="product-brand">
+                                By: {{product.product_brand[0].brandName}}
+                            </div>
+                            <div class="product-desc">
+                                {{product.description}}
+                            </div>
+                            <div class="product-price">
+                                <span class="price">$ {{product.price}}.00</span> <span class="size">{{product.size}}</span>
+                             </div>
+                             <!-- <div class="product-price">
+                                 {{product.size}}
+                             </div>  -->
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <!-- <a class="action-btn"><i class="fa-regular fa-eye"></i></a> -->
+                        <a title="Edit this Product" class="action-btn"><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                        <a title="Delete this Product" class="action-btn action-delete" (click)="deleteConfirmation(product._id)"><i class="fa-regular fa-trash-can"></i>Delete</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </section>
+
+    <!-- DELETE PROMPT -->
+    <div class="popUp-modal-bg" *ngIf="deletePrompt">
+        <div class="modal-mssg-bx del_mssg">
+            <span class="closeX" (click)="cancelDelete()"><i class="fa-solid fa-xmark"></i></span>
+            <i class="fa-regular fa-circle-xmark"></i>
+            <h3>Are you sure?</h3>
+            <p>Are you sure you want to delete this Product? This cannot be undone.</p>
+            <div class="modal-btn-contain">
+                <button class="modal-btn modal-btn-cancel" (click)="cancelDelete()">Cancel</button>
+                <button class="modal-btn modal-btn-delete" (click)="deleteProduct()">Delete</button>
+            </div>
+        </div>
+    </div> 
+
+    <!-- <div class="scss_mssg_cont">
+        <div class="scss_mssg">
+            <span class="closeX" onclick="closeX()"><i class="fa-solid fa-xmark"></i></span>
+            <h3>Welcome<br>Admin</h3>
+        </div>
+    </div>  -->
+</div>
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Test Brands List Display</h1>
+<ul>
+    <li *ngFor="let brand of brands">
+        <b>Brand Name:</b>{{brand.brandName}}<br>
+        <b>Brand Logo:</b><br><img src="{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+    </li>
+</ul>
+
+
+<h1>Test Products List Display</h1>
+<ul>
+    <li *ngFor="let product of products; ">
+        <b>Product Name: {{product.prodName}}</b><br>
+        <b>Product Brand:{{product.product_brand[0].brandName}}</b><br><br>
+
+    </li>
+</ul> -->

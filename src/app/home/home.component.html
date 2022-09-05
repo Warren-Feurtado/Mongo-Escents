@@ -1,0 +1,202 @@
+<app-top-nav></app-top-nav>
+<div class="container">
+    <section class="carousel">
+
+
+        <carousel class="carousel-slider" [height]="300" [loop]="true" [autoplay]="true" [autoplayInterval]="5000" [cellsToShow]="1" [dots]="true" [transitionDuration]="2000">
+            <div class="carousel-cell cell">
+              <a routerLink="/fragrances"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_0_mq4.jpg?v=9RWT8SOG631TOCW" alt=""></a>
+            </div>  
+            <div class="carousel-cell">
+              <a routerLink="/fragrances"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_3_mq4@2x.jpg?v=OOK6QTZTZF" alt=""></a>
+            </div>  
+            <div class="carousel-cell">
+              <a routerLink="/fragrances"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_2_mq4@2x.jpg?v=OOK6QTZTZF" alt=""></a>
+            </div>    
+        </carousel>
+
+        <!-- <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
+              <a href="#"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_0_mq4.jpg?v=9RWT8SOG631TOCW" alt=""></a>
+            </ng-template>  
+            <ng-template carouselSlide>
+              <a href="#"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_3_mq4@2x.jpg?v=OOK6QTZTZF" alt=""></a>
+            </ng-template>  
+            <ng-template carouselSlide>
+              <a href="#"><img src="https://img.fragrancex.com/images/l/25/d/0/homeimage_2_mq4@2x.jpg?v=OOK6QTZTZF" alt=""></a>
+            </ng-template>    
+        </owl-carousel-o> -->
+    </section>
+
+    <section class="sect2">
+        <div class="imgBxFlex">
+            <div class="imgBx">
+                <a routerLink="/men-colognes"><img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/Men_s_perfumes_for_bottom_7c6c221f-810c-4a31-9a7c-f15725053aed.jpg?v=1559759591" alt="Shop Colognes for Men"></a>
+            </div>
+            <div class="imgBx">
+                <a routerLink="/women-perfumes"><img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/Womens_perfumes_for_bottom2.jpg?v=1559759647" alt="Shop Colognes for Men"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sect3">
+        <h1>Our Top Brands</h1>
+        <div class="brandLogosContain">
+            <div class="brandLogos" *ngFor="let brand of brands | slice:0:12; let i = index;">
+                <a href="#"><img src="http://localhost:2000/{{brand.logoSrc}}" [alt]="brand.logoAlt"></a>
+            </div>
+        </div>
+
+        <div class="btnContain">
+            <a routerLink="/brands" class="btn1">View All Brands</a>
+        </div>
+    </section>
+
+    <section class="sect4">
+        <h1>Best Sellers</h1>
+        
+        <div class="productSlide">
+            <div class="slide">
+                <div class="productCard" *ngFor="let product of products" style="margin: marginChange">
+                    <a [routerLink]="['/details', product._id]">
+                        <div class="productimgBx">
+                        <img src="http://localhost:2000/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                        </div>
+                        <div class="productName">
+                            {{product.prodName}}
+                        </div>
+                        <div class="productBrand">
+                            By: {{product.product_brand[0].brandName}}
+                        </div>
+                        <div class="productDescription">
+                            {{product.description}}
+                        </div>
+                        <div class="productPrice">
+                            ${{product.price}}
+                        </div>
+                    </a>   
+                </div>
+            </div>
+        </div>
+        <button (click)="slidePrevious()" class="slideArrowLeft"><mat-icon class="slideArrowIcon">keyboard_arrow_left</mat-icon></button>
+        <button (click)="slideNext()" class="slideArrowRight"><mat-icon class="slideArrowIcon">keyboard_arrow_right</mat-icon></button>
+
+    </section>
+
+    <section class="sect5">
+        <div class="flexBx">
+            <img src="https://cdn.shopify.com/s/files/1/0910/0818/files/eternity-3.jpg?v=1641303424" alt="CALVIN KLEIN ETERNITY">
+
+            <div class="txtBx">
+                <span class="smallTxt">The Perfect Match</span><br>
+                <span class="largeTxt">CALVIN KLEIN<br>ETERNITY<br>FRAGRANCES</span>
+                <p>Eternity for Calvin Klein for men and women was created to celebrate the eternal elements of love and family that are found in a marriage. Launched in the early 90s, this fragrance continues to be a top seller from the CK collection. The long-lasting fragrance makes for a perfect refreshing every day scent that can be worn all year around.</p>
+                <div class="btnContain">
+                    <a routerLink="/fragrances" class="btn2">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sect6">
+        <h1>CELEBRITY FRAGRANCES</h1>
+        <div class="productSlide">
+            <div class="slide">
+                <div class="productCard" *ngFor="let product of products">
+                    <a [routerLink]="['/details', product._id]">
+                        <div class="productimgBx">
+                        <img src="http://localhost:2000/{{product.imageSrc}}" [alt]="product.imageAlt">
+                        </div>
+                        <div class="productName">
+                            {{product.prodName}}
+                        </div>
+                        <div class="productBrand">
+                            By: {{product.product_brand[0].brandName}}
+                        </div>
+                        <div class="productDescription">
+                            {{product.description}}
+                        </div>
+                        <div class="productPrice">
+                            ${{product.price }}
+                        </div>
+                    </a>   
+                </div>
+            </div>
+        </div> 
+        <button (click)="slidePrevious()" class="slideArrowLeft"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button (click)="slideNext()" class="slideArrowRight"><mat-icon>keyboard_arrow_right</mat-icon></button>
+    </section>
+
+    <section class="sect7">
+        <div class="flexBx">
+            <img src="https://cdn.shopify.com/s/files/1/0910/0818/files/brit_main.jpg?v=1644267834" alt="BURBERRY: BRIT FOR HIM">
+
+            <div class="txtBx">
+                <span class="smallTxt">Perfect For Winter</span><br>
+                <span class="largeTxt">BURBERRY: BRIT FOR HIM</span>
+                <p>Burberry Brit is a nonchalant Eau de Toilette for men. Right from the packaging, to the notes and the feel of the fragrance, it embodies the tradition and laidback spirit of the English. It is subtle, but with strong spicy and woody undertones for just the right amount of class and elegance.</p>
+                <div class="btnContain">
+                    <a routerLink="/fragrances" class="btn2">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sect8">
+        <div class="srvcBx">
+            <div class="srvcIcon">
+                <img src="https://cdn.shopify.com/s/files/1/0910/0818/files/noun_Shipping_1742677_2x_e2813884-3b65-4bb3-a8a9-eaa301528f21.png?v=1640152261../assets/Images/icons8-verified-account-96.png" alt="">
+            </div>
+            <div class="srvcTtxtBx">
+                <h2 class="srvcTitle">
+                    Free Delivery
+                </h2>
+                <p class="srvcDescription">
+                    Enjoy Free Delivery on all orders over $50 USD.
+                </p>
+            </div>
+            
+        </div>
+        <div class="srvcBx">
+            <div class="srvcIcon">
+                <img src="../assets/Images/icons8-guarantee-100.png" alt="">
+            </div>
+            <div class="srvcTtxtBx">
+                <h2 class="srvcTitle">
+                    100% AUTHENTIC
+                </h2>
+                <p class="srvcDescription">
+                    Enjoy genuine designer fragrances at discounted prices.
+                </p>
+            </div>
+            
+        </div> 
+        <div class="srvcBx">
+            <div class="srvcIcon">
+                <img src="../assets/Images/icons8-security-64.png" alt="">
+            </div>
+            <div class="srvcTtxtBx">
+                <h2 class="srvcTitle">
+                    Safe & Secure Checkout
+                </h2>
+                <p class="srvcDescription">
+                    100% safe and secure checkout. Your information is protected.
+                </p>
+            </div>
+        </div> 
+    </section>
+
+    <section class="sect9">
+        <div class="newsletterContain">
+            <h1>Be the<br>first to know<br>about our <span><I>sales and discounts</I></span></h1>
+            <p>Our email subscribers get early access to new<br>launches, promotions and more.</p>
+            <div class="newsletterInput">
+                <input type="text" name="" id="" placeholder="Type your email here">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>
+
+

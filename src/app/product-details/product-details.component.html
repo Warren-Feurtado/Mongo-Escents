@@ -1,0 +1,19 @@
+<app-top-nav></app-top-nav>
+<div class="container">
+
+    <div class="flexBx" *ngIf="product">
+        <div class="left">
+            <img src="http://localhost:2000/{{product.imageSrc}}" [alt]="product.imageAlt">
+        </div>
+        <div class="right">
+          <h2 class="prodName">{{product.prodName}}</h2>
+          <h4 class="prodBrand">By: {{ product.brand && product.brand.brandName}}</h4>
+          <p class="prodDesc">{{product.description}}</p>
+          <h3 class="prodPrice">{{product.price | currency}}</h3>
+          <h5 class="prodSize">size: <span>{{product.size}}</span></h5>
+            
+          <button class="detailsBtn" (click)="addToCart()">ADD TO CART</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,421 @@
+.container{
+    width: 100%;
+    padding-bottom: 2vw;
+}
+
+/* -------------- Section1 / top Slide ------------------ */
+
+carousel{
+    z-index: 1;
+}
+
+/* 
+.carousel-slider{
+    width: 100%;
+}
+
+.carousel-slider cell{
+    width: 100%;
+}
+
+.carousel-slider .carousel-cell{
+    width: 1000px;
+}
+
+.carousel-cell img{
+    width: 100%;
+} */
+
+/* .carousel{
+    width: 100%;
+}
+
+.carousel owl-carousel-o{
+    width: 100%;
+    display: flex;
+}
+
+owl-carousel-o ng-template{
+    width: 100%;
+    height: 100%;
+}
+
+ng-template img{
+    width: 100%;
+    height: 100%;
+} */
+
+/* -------------- Section2 ------------------ */
+.sect2{
+    width: 100%;
+    padding: 0 5% 0px 5%;
+}
+
+.sect2 .imgBxFlex{
+    width: 90%;
+    height: 17vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vw auto 0 auto;
+}
+
+.imgBxFlex .imgBx{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imgBx:hover img{
+    transform: scale(1.1);
+}
+
+.imgBx img{
+    width: 100%;
+    height: 100%;
+    transition: 1s ease;
+}
+
+/* -------------- Section3 / Section4 / Section6 ------------------ */
+.sect3{
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid rgb(230, 229, 229);
+    padding: 3vw 0;
+}
+
+.sect3 h1, .sect4 h1, .sect6 h1{
+    width: fit-content;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: auto;
+}
+.sect3 h1::after, .sect4 h1::after, .sect6 h1::after{
+    content: "";
+    height: 0.3vw;
+    width: 3vw;
+    margin: 0.3vw 0 0 0;
+    background: rgb(28, 114, 147); 
+    display: block;
+}
+
+.sect3 .brandLogosContain{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3vw auto 0 auto;
+}
+
+.brandLogosContain .brandLogos{
+    width: 15%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    
+}
+
+.brandLogos:hover img{
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.brandLogos img{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.sect3 .btnContain{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* -------------- Section4 / Best Sellers-Carousel ------------------ */
+.sect4, .sect6{
+    width: 100vw;
+    padding: 3vw 0 10vw 0;
+    position: relative;
+}
+
+/* -------------- Products' Slider ------------------ */
+.productSlide{
+    width: 95%;
+    overflow-x: scroll;
+    margin: 3vw auto 0 auto;
+    padding:2vw 0 2vw 0;
+}
+
+/* -------------- Products' Slider / Scroll-Bar Specifications ------------------ */
+.productSlide::-webkit-scrollbar {
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: rgb(236, 236, 236) ;
+}
+.productSlide::-webkit-scrollbar-thumb {
+    background-color: rgb(28, 114, 147);
+    border-radius: 5px;
+}
+
+.productSlide .slide{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------- Products' Slider / Product Cards ------------------ */
+.productSlide .productCard{
+    width: 15vw;
+    height: auto;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    text-align: center; 
+    margin: 0 0.5vw;
+    padding: 0 0.5vw;
+    color: black;
+}
+
+.productCard a{
+    color: black;
+}
+
+.productCard .productimgBx{
+    width: 90%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.productimgBx img{
+    width: 100%;
+    
+}
+
+.productCard .productName{
+    height: 4vw;
+    /* border: 1px solid red; */
+    font-size: 1.5vw;
+    font-weight: 600;
+    /* margin-bottom: 0.5vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productCard .productBrand{
+    height: 2vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: rgb(66, 139, 168);
+    /* margin-bottom: 0.5vw; */
+    /* border: 1px solid red; */
+
+}
+
+.productCard .productDescription{
+    height: 2vw;
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: rgb(41, 41, 41);
+    margin-bottom: 1vw;
+    /* border: 1px solid red; */
+}
+
+.productCard .productPrice{
+    font-size: 1.8vw;
+    font-weight: 600;
+    margin-bottom: 0.7vw;
+    color: rgb(18, 98, 130);
+}
+
+/* -------------- Products' Slider / Arrow Controls ------------------ */
+.slideArrowLeft{
+    padding: 2vw 0;
+    position: absolute;
+    top: 50%;
+    left: 1.5vw;
+    transform: translateY(-50%);
+    border: 1px solid rgb(207, 207, 207);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(28, 114, 147);
+    background: white;
+}
+.slideArrowRight{
+    padding: 2vw 0;
+    position: absolute;
+    top: 50%;
+    right: 1.5vw;
+    transform: translateY(-50%);
+    border: 1px solid rgb(207, 207, 207);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(28, 114, 147);
+    background: white;
+}
+
+.slideArrowIcon{
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------- Section5 ------------------ */
+.sect5{
+    width: 100%;
+    background: rgb(255,250,220);
+    padding: 3vw 0;
+}
+
+.sect5 .flexBx, .sect7 .flexBx{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.flexBx img{
+    width: 30%;
+    margin: -10vw 0 0 15vw;
+    
+}
+
+.flexBx .txtBx{
+    width: 30%;
+    margin-left: 8vw;
+}
+
+.txtBx .smallTxt{
+    font-size: 1vw;
+    line-height: 2;
+}
+
+.txtBx .largeTxt{
+    font-size: 3vw;
+    margin-bottom: 2vw;
+}
+
+.txtBx p{
+    font-size: 1.1vw;
+    margin: 1.5vw 0 2vw 0;
+    line-height: 1.5;
+}
+
+/* -------------- Section7 ------------------ */
+.sect7{
+    width: 100%;
+    background: rgb(241,235,229);
+    padding: 5vw 0;
+}
+
+/* -------------- Section8 ------------------ */
+.sect8{
+    width: 100%;
+    padding: 5vw 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sect8 .srvcBx{
+    width: 22%;
+    display: flex;
+}
+
+.srvcBx .srvcIcon{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+}
+
+.srvcIcon img{
+    width: 100%;
+}
+
+.srvcTtxtBx .srvcTitle{
+    margin-bottom: 0.5vw;
+    font-size: 1.3vw;
+    color: rgb(48, 48, 48);
+}
+
+.srvcTtxtBx .srvcDescription{
+    font-size: 1vw;
+}
+
+/* -------------- Section9 ------------------ */
+.sect9{
+    width: 93vw;
+    height: 30vw;
+    margin: auto;
+    background: url('https://cdn.shopify.com/s/files/1/0269/7763/2389/files/newsletter_banner.jpg?v=1636134871');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect9 .newsletterContain{
+    text-align: center;
+}
+
+.sect9 .newsletterContain h1{
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+
+}
+
+.newsletterContain h1 span{
+    font-weight: 400;
+}
+
+.sect9 .newsletterContain p{
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+}
+
+.newsletterContain .newsletterInput{
+    height: 3vw;
+}
+
+.newsletterInput input{
+    height: 100%;
+    width: 30vw;
+    font-size: 1.1vw;
+    padding-left: 1vw;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgb(117, 117, 117);
+}
+
+.newsletterInput button{
+    height: 100%;
+    width: 10vw;
+    font-size: 1.1vw;
+    color: white;
+    background: black;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid rgb(138, 138, 138);
+    border-left: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+

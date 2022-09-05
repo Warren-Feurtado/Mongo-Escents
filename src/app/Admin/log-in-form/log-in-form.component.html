@@ -1,0 +1,25 @@
+<app-top-nav></app-top-nav>
+<div class="container">
+    <form class="lgFrm" [formGroup]="logForm" (ngSubmit)="onSubmit()" novalidate data-aos="fade-zleft" data-aos-duration="300" data-aos-easing="ease">
+        <h1>Admin Login</h1>
+        <div class="inptBx">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" formControlName="email" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}">
+
+            <div class="alertBx">
+                {{errorAlertEmail()}}
+            </div>
+        </div>
+        <div class="inptBx">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" formControlName="password">
+
+            <div class="alertBx">
+                {{errorAlertPass()}}
+            </div>
+        </div>
+        <button type="submit">Login</button>
+        <!-- <p >Not yet a member? <a routerLink="/sign-up-form">Register Here.</a></p> -->
+    </form>
+</div>
+<app-footer></app-footer>
