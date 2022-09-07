@@ -60,9 +60,12 @@ export class EditProductComponent implements OnInit {
   fetchProductToEdit(): void {
     this.productsService.getProductById(this.route.snapshot.params['id']).subscribe((product: any) => {
       this.product = product.data;
+      
+      const brand: any = this.product.brand;
+
       this.prodEditForm = this.fb.group({
         prodName: [this.product.prodName],
-        brand: [product.brand],
+        brand: [brand._id],
         gender: [this.product.gender],
         price: [this.product.price],
         size: [this.product.size],
@@ -100,8 +103,7 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchProductToEdit();
-    console.log(this.product);
-    
+    this.fetchAllBrands()
   }
 
 }

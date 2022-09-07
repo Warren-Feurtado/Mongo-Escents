@@ -58,30 +58,43 @@
         <h1>Add New Brand </h1>
         
 
-        <div class="form-container">
-            <form class="brand-form" [formGroup]="addBrandForm" (ngSubmit)="saveBrand()">
-                <div class="tbl-heading">
-                    <!-- <div class="tbl-title"> -->
-                        <span (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</span>
-                        <a routerLink="/admin/brands" class="add-btn"><i class="fa-regular fa-eye"></i>View Brands</a>
-                    <!-- </div> -->
-                </div>
-                
-                <div class="brand-info-bg">
-                    <div class="input-bx">
-                        <label for="logoImg">Logo Image</label><br>
-                        <input type="file" id="logoImg" formControlName="logoSrc" (change)="file($event)">
+        <div class="brandForm-form-container">
+            <div (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</div>
+            <form class="brand-edit-form" [formGroup]="addBrandForm" (ngSubmit)="saveBrand()">
+                <div class="form-flex-bx">
+
+                    <div class="brand-logo-bx">
+                        <div class="tbl-heading">
+                            <h3>Logo-Image</h3>
+                        </div>
+                        <div>
+                            <div class="brand-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png">
+                            </div>
+                            <input type="file" formControlName="logoSrc">
+                            
+                        
+                        </div>
                     </div>
-                    <div class="input-bx">
-                        <label for="brandNm">Brand Title</label><br>
-                        <input type="text" id="brandNm" formControlName="brandName">
-                    </div>
-                    <div class="input-bx">
-                        <label for="brandNm">Brand Alt</label><br>
-                        <input type="text" id="brandNm" formControlName="logoAlt">
-                    </div>
-                    <div class="sub-btn-contain">
-                        <button class="sub-btn" style="float: left;"><i class="fa-solid fa-cloud-arrow-up"></i>Save Brand</button>
+
+                    <div class="brand-details-bx">
+                        <div class="tbl-heading">
+                            <h3>Brand-Details</h3>
+                        </div>
+
+                        <div class="input-bx brandName-inpt">
+                            <label for="brandName">Brand Name</label><br>
+                            <input type="text" id="brandName" placeholder="Type brand title" formControlName="brandName">
+                        </div>
+
+                        <div class="input-bx">
+                            <label for="">Logo Description</label><br>
+                            <input type="text" formControlName="logoAlt">
+                        </div>
+
+                        <div class="save">
+                            <button ><i class="fa-solid fa-cloud-arrow-up"></i> Add Brand</button>
+                        </div>
                     </div>
                 </div>
             </form>

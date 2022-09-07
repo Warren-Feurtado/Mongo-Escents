@@ -1,27 +1,4 @@
 
-
-<!-- <div class="container">
-   
-    <div class="flex-container">
-        <div class="prod-details">
-
-        </div>
-        <div class="image-input">
-            <div class="prod-image">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png" alt="">
-            </div>
-            <input type="file">
-        </div>
-    </div>
-</div> -->
-
-<!-- 6311b2fcc18ac39d1da94f9f test ID -->
-
-
-
-
-
-
 <div class="body_contain">
     <!--------- DASHBOARD MENU --------->
     <section class="dash_menu " id="dash_menu" *ngIf="toggle">
@@ -30,9 +7,6 @@
                 <div class="logo-img">
                     <img src="../assets/Images/E-scents-logo-2-removebg-preview.png" alt="">
                 </div>
-                <!-- <div class="logo_txt">
-                    <h1>EScents</h1>
-                </div> -->
             </div>
         </a>
         <div class="profil_info">
@@ -86,7 +60,7 @@
                 <div class="form-flex-bx">
                     <div class="prod-details-bx">
                         <div class="tbl-heading">
-                            <h3>Edit-Details</h3>
+                            <h3>Edit-Product</h3>
                         </div>
 
                         <div class="input-bx prodName-inpt">
@@ -98,7 +72,7 @@
                             <label for="productBrand">Product Brand</label><br>
                             <select name="brand" id="" formControlName="brand">
                                 <option value="">--- Select Brand ---</option>
-                                <option [value]="brand._id" *ngFor="let brand of brands" selected>
+                                <option [value]="brand._id" *ngFor="let brand of brands">
                                     {{brand.brandName}}
                                 </option>
                             </select>
@@ -136,13 +110,13 @@
                     
                     <div class="prod-image-bx">
                         <div class="tbl-heading">
-                            <h3>Image</h3>
+                            <h3>Product-Image</h3>
                         </div>
                         <div>
                             <div class="prod-image">
-                            <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="">
+                            <img src="https://e-scents.herokuapp.com/{{product && product.imageSrc}}" alt="">
                         </div>
-                        <input type="file" formControlName="imageSrc">
+                        <input type="file" >
                         <div class="input-bx">
                             <label for="">Image Description</label><br>
                             <input type="text" formControlName="imageAlt"></div>

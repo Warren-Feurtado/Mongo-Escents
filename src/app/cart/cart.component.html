@@ -26,10 +26,10 @@
                             <span class="dec" (click)="decQuantity()">-</span><input class='prodQty' type="number" value="{{quantity}}"><span class="inc" (click)="incQuantity()">+</span>
                         </td>
                         <td>
-                            <h3>{{item.cart_item[0].price * quantity | currency}}</h3>
+                            <h3 class="prodPrice">{{item.cart_item[0].price * quantity | currency}}</h3>
                         </td>
                         <td>
-                            <button (click)="removeFromCart(item.cart_item[0]._id)"><mat-icon class="cartProdDelete" >delete_forever</mat-icon></button>
+                            <button (click)="removeFromCart(item._id)"><mat-icon class="cartProdDelete" >delete_forever</mat-icon></button>
                         </td>
                     </tr>
                 </table>

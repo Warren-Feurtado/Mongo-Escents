@@ -1,25 +1,21 @@
-
-.form-container{
-    width: 95%;
-    margin: auto;
-    height: fit-content;
+.brandForm-form-container{
+    width: 62vw;
+    margin: 4vw auto;
+    /* display: flex; */
     /* border: 1px solid red; */
 }
 
-.form-container .tbl-heading {
-    width: 100%;
-    padding: 1vw 2.5vw;
-    font-size: 1vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgb(242, 242, 242);
-   
-}
-
 .go-back-link{
-    font-weight: 500;
-    margin-top: 1vw;
+    width: fit-content;
+    /* text-align: center; */
+    margin: 1vw 0 2vw 0;
+    padding: 0.7vw 1vw;
+    font-weight: 600;
+    font-size: 1vw;
+    border-radius: 5px;
+    border: 1px solid rgba(28, 113, 147, 0.411);
+    color: rgba(13, 81, 108, 0.87);
+    /* margin-top: 1vw; */
     cursor: pointer;
     transition: 0.1s;
 }
@@ -29,78 +25,139 @@
 }
 
 .go-back-link:hover{
-    text-decoration: underline;
-    color: rgba(48, 39, 210, 0.73);
+    /* text-decoration: underline; */
+    /* color: rgb(28, 114, 147); */
+    border: 1px solid rgba(28, 113, 147, 0);
+    background-color: rgb(0, 2, 2);
+    color: white;
+    opacity: 0.8;
 }
 
-.form-container .brand-form{
-    width: 60%;
-    /* height: fit-content; */
-    margin: 4vw auto;
+
+.form-flex-bx{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
     /* border: 1px solid red; */
 }
 
-.brand-form .brand-info-bg{
-    width: 100%;
-    /* height: fit-content; */
-    padding: 1vw 2vw 4vw 2vw;
-    /* padding: 0 2vw; */
-    background-color: white;
+/*------------- Brand Logo Box  -------------------*/
+.brand-logo-bx{
+    width: 23vw;
+    padding: 1vw 0;
+    height: fit-content;
+    background: white;
+    border: 1px solid rgb(224, 224, 224);
+    /* border: 1px solid red; */
     border-radius: 7px;
-    border: 1px solid rgb(232, 232, 232);
+
 }
 
-.brand-info-bg .input-bx{
+.brand-logo{
     width: 100%;
-    margin: 1vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
-.input-bx label{
-    font-size: 1vw;
-    font-weight: 600;
-    
+.brand-logo img{
+    width: 40%;
+    /* height: 40%; */
 }
 
-.input-bx input{
-    width: 100%;
-    height: 3vw;
-    margin-top: 0.5vw;
-    padding: 1vw;
-    border: 1px solid rgb(232, 232, 232);
-    font-size: 1vw;
-    background-color: rgba(222, 232, 238, 0.438);
-}
-
-.sub-btn{
-    padding: 0.7vw 1vw;
-    /* margin-top: 1vw; */
-    border-radius: 5px;
-    /* float: right; */
-    background: rgb(28, 114, 147);
-    border: none;
-    color: white;
-    font-size: 1vw;
-    font-weight: 400;  
+input[type="file"]{
+    width: 80%;
+    margin: 2vw 2vw 0 2vw;
+    font-size: 0.9vw;
+    border-radius: 7px;
+    padding-top: 0.8vw;
+    background: none;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.sub-btn:hover{
-    background-color: black;
+.input-bx{
+    width: 90%;
+    margin: 1vw auto 0 auto;
 }
 
-.sub-btn i{
-    margin-right: 0.5vw;
+/*------------- Brand Details Box  -------------------*/
+.brand-details-bx{
+    width: 30vw;
+    height: fit-content;
+    padding: 1vw 0;
+    font-weight: 800;
+    border-radius: 7px;
+    border: 1px solid rgb(224, 224, 224);
+    background-color: white;
 }
 
-/* .brand-info-bg .tbl-heading {
+/*------------- Brand Edit Form Section Headings  -------------------*/
+.tbl-heading{
     width: 100%;
-    padding: 1vw 2.5vw;
-    font-size: 1vw;
+    padding: 1vw 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2vw;
     border-bottom: 1px solid rgb(242, 242, 242);
-   
-} */
+}
 
+.tbl-heading h3{
+    font-weight: 700;
+    font-size: 1.3vw;
+}
+
+.input-flex-bx{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    /* justify-content: space-between; */
+    /* border: 1px solid red; */
+}
+
+.input-bx label{
+    font-size: 0.9vw;
+    font-weight: 500;
+}
+
+/*------------- Products Edit Form Input Boxes  -------------------*/
+.input-flex-bx .input-bx input{
+    width: 90%;
+}
+
+.brandName-inpt input{
+    font-size: 1.3vw;
+    font-weight: 800;
+}
+
+input{
+    width: 100%;
+    height: 3vw;
+    font-size: 1vw;
+    padding: 0 1vw;
+    margin-top: 0.5vw;
+    background-color: rgba(222, 232, 238, 0.438);
+    border: none;
+}
+
+.save{
+    width: 90%;
+    margin: 1vw auto;
+}
+
+.save button{
+    width: 100%;
+    height: 3vw;
+    font-size: 1vw;
+    border-radius: 5px;
+    background: rgb(28, 114, 147);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.save button:hover{
+    background: rgb(0, 0, 0);
+}

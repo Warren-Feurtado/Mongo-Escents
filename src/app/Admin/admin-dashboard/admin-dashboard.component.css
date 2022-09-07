@@ -90,6 +90,7 @@
 /*------------- Products and Brands Table Headings -------------------*/
 .prodBrands-tbls-container .tbl-heading{
     width: 100%;
+    
     padding: 1vw 2.5vw;
     display: flex;
     justify-content: space-between;
@@ -98,12 +99,14 @@
 }
 
 .tbl-heading h3{
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.2vw;
 }
 
 .tbl-heading .view-more{
     color: rgb(0, 123, 255);
     font-size: 1vw;
+    font-weight: 600;
 }
 
 .tbl-heading .view-more:hover{
@@ -139,13 +142,13 @@
     /* border: 1px solid green; */
     text-align: center;
     font-size: 1vw;
+    font-weight: 500;
 }
 
 .prodBrands-tbls-container th{
     text-align: center;
     padding: 1vw 0 0.5vw 0 ;
     color: rgba(66, 114, 159, 0.815);
-    font-weight: 500;
 }
 
 .prod-tbl .product-td{
@@ -217,5 +220,10 @@
 
 .brand-logo-contain img{
     width: 100%;
+}
+
+.brandName{
+    font-size: 1.3vw;
+    font-weight: bold;
 }
 

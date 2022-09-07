@@ -59,7 +59,7 @@ export class AddBrandComponent implements OnInit {
         console.log(res);
       },
       error: (err) => {
-        alert('Error encountered While adding The New Item to the List');
+        alert('Error encountered While adding The New brand');
         console.log(err);
       }
     });
