@@ -271,7 +271,7 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
     overflow-x: hidden;
     transition: 1s all;
     padding-bottom: 5vw;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(222, 232, 238, 0.438);
 }
 
 
@@ -435,7 +435,9 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
 .popUp-modal-bg{
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.458);
     display: flex;
     justify-content: center;
@@ -444,9 +446,11 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
 }
 
 .modal-mssg-bx{
+    width: 40%;
     position: relative;
+    padding: 0 2vw;
     background: white;
-    color: green;
+    /* color: green; */
     text-align: center;
     border-radius: 5px;
     /* display: flex;
@@ -455,9 +459,27 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.323);
 }
 
+.modal-mssg-bx h3{
+    font-size: 1.5vw;
+    color: black;
+    margin-bottom: 1vw;
+}
+
+.modal-mssg-bx p{
+    width: 90%;
+    margin: auto;
+    font-size: 0.9vw;
+    font-weight: 500;
+    color: rgb(112, 112, 112);
+}
+
 .scss_mssg{
-    width: 20%;
-    height: 20%;
+    width: fit-content;
+    /* height: 20%; */
+}
+
+.fa-circle-check{
+    color: green
 }
 
 .closeX{
@@ -484,7 +506,12 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
     color: red;
 }
 
-/*------------ LOGIN SUCCESS WELCOME MESSAGE -----------------*/
+.modal-icon{
+    font-size: 3vw;
+    margin: 1vw 0;
+}
+
+/*------------ DELETE PROMPT MESSAGE -----------------*/
 
 .del_mssg{
     width: 25%;
@@ -493,23 +520,9 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
 
 .del_mssg .fa-circle-xmark{
     color: red;
-    font-size: 3vw;
-    margin: 1vw 0;
 }
 
-.del_mssg h3{
-    color: black;
-    margin-bottom: 1vw;
-}
-
-.del_mssg p{
-    width: 90%;
-    margin: auto;
-    font-size: 0.9vw;
-    font-weight: 500;
-    color: rgb(112, 112, 112);
-}
-
+/*------------ MODAL BUTTON CONTAINER --------------------------------*/
 .modal-btn-contain{
     width: 100%;
     margin: 2vw auto;
@@ -518,28 +531,55 @@ summary .fa-spray-can, summary .fa-bag-shopping, summary .fa-house-user, summary
     align-items: center;
 }
 
+/*------------ MODAL BUTTON (GENERAL) -----------------*/
 .modal-btn-contain .modal-btn{
-    padding: 0.7vw 2.5vw;
+    padding: 0.9vw 2.3vw;
+    font-size: 1vw;
     margin: 0 1vw;
     cursor: pointer;
-    color: white;
-    border: none;
+    /* color: white; */
+    /* border: none; */
     border-radius: 3px;
     transition: 0.15s;
 }
 
-.modal-btn-cancel{
-    background-color: rgb(171, 171, 171);
-}
 .modal-btn:hover{
     /* background-color: rgb(171, 171, 171); */
     opacity: 0.6;
 }
 
-.modal-btn-delete{
-    background-color: rgb(214, 3, 3);
+.modal-btn i{
+    margin-right: 0.3vw;
+}
+
+/*------------ MODAL BUTTON TYPES-----------------*/
+/*------------ MODAL CANCEL BUTTON -----------------*/
+.modal-btn-cancel{
+    background-color: rgb(219, 219, 219);
+    border: none;
 }
 
 
+/*------------ MODAL DELETE BUTTON -----------------*/
+.modal-btn-delete{
+    background-color: rgb(214, 3, 3);
+    color: white;
+    border: none;
+}
+
+/*------------ MODAL SUCCESS BUTTON -----------------*/
+.modal-btn-success{
+    background-color: rgb(33, 87, 162);
+    color: white;
+    border: none;
+}
+
+/*------------ MODAL TRANSPARENT BUTTON -----------------*/
+.modal-btn-trans{
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: black;
+
+}
 /*==================================================================*/
 

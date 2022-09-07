@@ -1,6 +1,12 @@
 <app-top-nav></app-top-nav>
 <div class="container">
-    <h1>Your Cart <a class="backToShop btn2" routerLink="/fragrances">Continue Shopping</a></h1>
+
+    <div class="heading-bx">
+        <h3 (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</h3>
+        <h1 class="heading">Your Cart</h1>
+    </div>
+    
+    <!-- <a class="backToShop btn2" routerLink="/fragrances">Continue Shopping</a><h1>Your Cart</h1> -->
     <div class="flexBx">
         <div class="left">
             
@@ -13,8 +19,8 @@
                             </div>
                         </td>
                         <td>
-                            <h4>{{itemBrand[i] && itemBrand[i].data.brandName}}</h4>
-                            <p>{{item.cart_item[0].prodName}}</p>
+                            <h4 class="prodName">{{item.cart_item[0].prodName}}</h4>
+                            <p class="prodBrand">{{itemBrand[i] && itemBrand[i].data.brandName}}</p>
                         </td>
                         <td>
                             <span class="dec" (click)="decQuantity()">-</span><input class='prodQty' type="number" value="{{quantity}}"><span class="inc" (click)="incQuantity()">+</span>

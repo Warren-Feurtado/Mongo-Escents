@@ -72,7 +72,7 @@
                             {{product.description}}
                         </div>
                         <div class="productPrice">
-                            ${{product.price}}
+                            <span class="price">{{product.price | currency}}</span> <span class="size">{{product.size }}</span>
                         </div>
                     </a>   
                 </div>
@@ -117,7 +117,7 @@
                             {{product.description}}
                         </div>
                         <div class="productPrice">
-                            ${{product.price }}
+                            <span class="price">{{product.price | currency}}</span> <span class="size">{{product.size }}</span>
                         </div>
                     </a>   
                 </div>

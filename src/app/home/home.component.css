@@ -236,6 +236,12 @@ ng-template img{
     color: rgb(18, 98, 130);
 }
 
+.productPrice .size{
+    font-size: 0.8vw;
+    margin-left: 0.5vw;
+    color: black;   
+}
+
 /* -------------- Products' Slider / Arrow Controls ------------------ */
 .slideArrowLeft{
     padding: 2vw 0;

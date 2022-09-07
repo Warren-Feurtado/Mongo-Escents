@@ -20,7 +20,7 @@ export class ProductsService {
   getAllProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductModel[]>(this.API_SERVER).pipe(
       tap((data) => {
-        console.log(`Products retreived successfully! ${JSON.stringify(data)}`),
+        console.log(`Products retreived successfully!`),
         catchError(error => of([data]));
       })
     );
@@ -82,7 +82,8 @@ export class ProductsService {
   };
 
   editExistingProduct(id: String, product: ProductModel): Observable<ProductModel> {
-    return this.http.patch<ProductModel>(this.API_SERVER, product, this.HTTP_HEADERS).pipe(
+    
+    return this.http.patch<ProductModel>(`${this.API_SERVER}/${id}`, product).pipe(
       tap((data) => {
         console.log('Product Updated successfully!'),
         catchError(error => of(data));

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from '../Models/product.model';
+import { Location } from '@angular/common';
 import { ProductsService } from '../products.service';
 import { BrandsService } from '../brands.service';
 
@@ -10,17 +11,19 @@ import { BrandsService } from '../brands.service';
 })
 export class MenColognesComponent implements OnInit {
 
-  products: ProductModel[] = [];
+  products: any[] = [];
   itemBrand: any[] = [];
 
   constructor(
     private productsService: ProductsService,
-    private brandsService: BrandsService
+    private brandsService: BrandsService,
+    private location: Location
     ) { }
 
-  // fetchMenColognes(): void{
-
-  // }
+  //GO BACK FUNCTION
+  onGoBack(){
+    this.location.back();
+  }
 
   fetchMenColognes(): void{
     this.productsService.getMenColognes().subscribe((fetchedProducts: any) => {

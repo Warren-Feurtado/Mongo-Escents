@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { CartService } from '../cart.service';
 import { ProductsService } from '../products.service';
 import { ProductModel } from '../Models/product.model';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -17,10 +18,13 @@ export class ProductDetailsComponent implements OnInit {
   product: any = [];
   productIdFromRoute: any = [];
 
+  addToCartSucces: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
+    private location: Location,
     private productsService : ProductsService,
     private cartService : CartService
     ) { }
@@ -35,11 +39,17 @@ export class ProductDetailsComponent implements OnInit {
       this.getProductById(this.productIdFromRoute);
     }
 
-
+    //FORM FOR CAPTURING THE ID TO BE ADDED TO CART 
     idToAddToCart = this.fb.group({
       productId: ['', Validators.required]
     });
 
+    //GO BACK FUNCTION
+    onGoBack() {
+      this.location.back();
+    }
+
+    //GET THE PRODUCT DETAIL
   getProductById(id: any): void{
     this.productsService.getProductById(id).subscribe((fetchedProd: any) => {
       this.product = fetchedProd.data;
@@ -47,15 +57,16 @@ export class ProductDetailsComponent implements OnInit {
         productId: this.product._id
       });
       console.log(fetchedProd);
-      
     });
   }
 
+  //ADD A PRODUCT ID TO CART
   addToCart( ) {
     this.cartService.addToCart(this.idToAddToCart.value).subscribe({
       next: (res) => {
-        alert('Product added to cart');
-        this.router.navigate(['/cart']);
+        // alert('Product added to cart');
+        this.addToCartSucces = true;
+        // this.router.navigate(['/cart']);
         console.log(res);
       },
       error: (err) => {
@@ -64,6 +75,10 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
     // window.alert('Your product has been added to the cart!');
+  }
+
+  closeX(){
+    this.addToCartSucces = false;
   }
 
 

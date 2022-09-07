@@ -1,1 +1,163 @@
-<p>edit-product works!</p>
+
+
+<!-- <div class="container">
+   
+    <div class="flex-container">
+        <div class="prod-details">
+
+        </div>
+        <div class="image-input">
+            <div class="prod-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png" alt="">
+            </div>
+            <input type="file">
+        </div>
+    </div>
+</div> -->
+
+<!-- 6311b2fcc18ac39d1da94f9f test ID -->
+
+
+
+
+
+
+<div class="body_contain">
+    <!--------- DASHBOARD MENU --------->
+    <section class="dash_menu " id="dash_menu" *ngIf="toggle">
+        <a routerLink="/" class="links">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="../assets/Images/E-scents-logo-2-removebg-preview.png" alt="">
+                </div>
+                <!-- <div class="logo_txt">
+                    <h1>EScents</h1>
+                </div> -->
+            </div>
+        </a>
+        <div class="profil_info">
+            <div class="profile_photo">
+                <img src="https://images.unsplash.com/photo-1627161684458-a62da52b51c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=549&q=80" alt="">
+            </div>
+            <h4 >John Doe</h4>
+            <span >Admin</span>
+        </div>
+        <div class="dash_opts">
+                    
+            <details class="option">
+                <summary><a routerLink="/admin"><i class="fa-solid fa-house-user"></i>Dashboard</a></summary>
+            </details>
+    
+            <details class="option">
+                <summary><i class="fa-solid fa-bag-shopping"></i>Manage Products<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/product" title="Add a new product"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/products" title="View all products"><i class="fa-solid fa-spray-can"></i> Product List</a></p>
+            </details>
+
+            <details class="option">
+                <summary><i class="fa-solid fa-splotch"></i>Manage Brands<i class="fa-solid fa-angle-down"></i></summary>
+                <p><a routerLink="/admin/add/brand" title="Add a new brand"><i class="fa-solid fa-circle-plus"></i> Add New</a></p>
+                <p><a routerLink="/admin/brands" title="View all brands"><i class="fa-solid fa-list-ul"></i> Brand List</a></p>
+            </details>
+
+            <button class="logOut" (click)="logOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i> log out</button>
+        </div>        
+    </section>
+        
+    
+    <!--------- BODY / MAIN --------->
+    <section class="body_main" id="body_main">
+        <div class="top_bar">
+            <div (click)="hideMenu()" title="Side Bar" class="menu_bars ">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- <div class="search">
+                <input type="search" placeholder="Type to search">
+                <button class="searchIcon"><mat-icon >search</mat-icon></button>
+            </div> -->
+        </div>
+    
+         <h1 >Product Editor</h1>
+
+        <div class="prodForm-form-container">
+            <div (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</div>
+            <form class="prod-edit-form" [formGroup]="prodEditForm" (ngSubmit)="onUpdateProduct()">
+                <div class="form-flex-bx">
+                    <div class="prod-details-bx">
+                        <div class="tbl-heading">
+                            <h3>Edit-Details</h3>
+                        </div>
+
+                        <div class="input-bx prodName-inpt">
+                            <label for="productName">Product Name</label><br>
+                            <input type="text" id="productName" placeholder="Type product title" formControlName="prodName">
+                        </div>
+
+                        <div class="input-bx prodBrand-inpt">
+                            <label for="productBrand">Product Brand</label><br>
+                            <select name="brand" id="" formControlName="brand">
+                                <option value="">--- Select Brand ---</option>
+                                <option [value]="brand._id" *ngFor="let brand of brands" selected>
+                                    {{brand.brandName}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="input-bx prodgender-inpt">
+                            <label for="gender">Gender</label><br>
+                            <select name="gender" id="" formControlName="gender">
+                                <option value="">--- Select Gender ---</option>
+                                <option value="Men">Men's</option>
+                                <option value="Women">Women's</option>
+                                <option value="Unisex">Unisex</option>
+                            </select>
+                        </div>
+
+                        <div class="input-flex-bx">
+                            <div class="input-bx prodPrice-inpt">
+                                <label for="prodPrice">Price</label><br>
+                                <input type="text" id="prodPrice" placeholder="0.00" formControlName="price">
+                            </div>
+
+                            <div class="input-bx prodSize-inpt">
+                                <label for="prodSize">size</label><br>
+                                <input type="text" id="prodSize" placeholder="size/ml" formControlName="size">
+                            </div>
+                        </div>
+
+                        <div class="input-bx prodDesc-inpt">
+                            <label for="prodDesc">Description</label><br>
+                            <textarea name="" id="prodDesc" cols="30" rows="10" placeholder="Type Product description" formControlName="description"></textarea>
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="prod-image-bx">
+                        <div class="tbl-heading">
+                            <h3>Image</h3>
+                        </div>
+                        <div>
+                            <div class="prod-image">
+                            <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="">
+                        </div>
+                        <input type="file" formControlName="imageSrc">
+                        <div class="input-bx">
+                            <label for="">Image Description</label><br>
+                            <input type="text" formControlName="imageAlt"></div>
+                        
+
+                        <div class="save">
+                            <button ><i class="fa-solid fa-cloud-arrow-up"></i> Save Changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+</div>
+    
+    

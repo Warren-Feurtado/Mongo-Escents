@@ -1,7 +1,10 @@
 
 <app-top-nav></app-top-nav>
 <div class="container">
-    <h1 class="heading">Women's Perfumes</h1>
+    <div class="heading-bx">
+        <h3 (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</h3>
+        <h1 class="heading">Women's Perfumes</h1>
+    </div>
 
     <div class="flexbox">
         <div class="mainLeft">
@@ -34,7 +37,7 @@
                                 {{product.description}}
                             </div>
                             <div class="productPrice">
-                                <span class="price">${{product.price }}</span> <span class="size">{{product.size }}</span>
+                                <span class="price">{{product.price | currency}}</span> <span class="size">{{product.size }}</span>
                             </div>
                         </div>
                     </a>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
 import { ProductModel } from '../Models/product.model';
 import { CartModel } from '../Models/cart.model';
@@ -13,18 +14,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FragrancesComponent implements OnInit {
 
-  products: ProductModel[] = [];
+  products: any[] = [];
 
   
   constructor(
     private productsService: ProductsService,
     private cartService: CartService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private location: Location
     ) { }
 
     addCartForm = this.fb.group({
       productId: ['', [Validators.required]],
     });
+
+    onGoBack(){
+      this.location.back();
+    }
 
   fetchProducts(): void{
     this.productsService.getAllProducts().subscribe((fetchedProducts: any) => {

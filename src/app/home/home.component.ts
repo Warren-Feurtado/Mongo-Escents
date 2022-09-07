@@ -15,8 +15,8 @@ import { ProductModel } from '../Models/product.model';
 export class HomeComponent implements OnInit {
 
 
-  brands: BrandModel[] = [];
-  products: ProductModel[] = [];
+  brands: any[] = [];
+  products: any[] = [];
   seclectedIndex = 0;
   marginChange: any = 0;
   margin = this.marginChange;

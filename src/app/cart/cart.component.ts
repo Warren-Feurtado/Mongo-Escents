@@ -4,6 +4,7 @@ import { ProductsService } from '../products.service';
 import { CartService } from '../cart.service';
 import { BrandsService } from '../brands.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -24,8 +25,14 @@ export class CartComponent implements OnInit {
     private productsService: ProductsService,
     private cartService: CartService,
     private brandsService: BrandsService,
-    private router: Router
+    private router: Router,
+    private location: Location,
     ) { }
+
+    //GO BACK FUNCTION
+    onGoBack(){
+      this.location.back();
+    }
 
     incQuantity(){
       this.quantity++;

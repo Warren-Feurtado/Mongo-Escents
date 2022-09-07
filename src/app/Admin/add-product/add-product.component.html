@@ -57,106 +57,89 @@
     
         <h1>Add New Product </h1>
 
-        <div class="form-container">
-            <form action="" class="prod-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()">
-                <div class="tbl-heading">
-                    <!-- <div class="tbl-title"> -->
-                        <span (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</span>
-                        <a routerLink="/admin/products" class="add-btn"><i class="fa-regular fa-eye"></i>View Products</a>
-                    <!-- </div> -->
-                </div>
-                
-                <div class="prod-info-bg">
-                    <div class="input-bx">
-                        <label for="prodNm">Product Name</label><br>
-                        <input type="text" id="prodNm" formControlName="prodName">
-                    </div>
-
-                    <div class="input-bx">
-                        <label for="prod-brand">Product Brand</label><br>
-                        <select id="prod-brand" formControlName="brand" >
-                            <option disabled selected class="placeholder">
-                                ---Select a Brand---
-                            </option>
-                            <option [value]="brand._id" *ngFor="let brand of brands">
-                                {{brand.brandName}}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="input-bx">
-                        <label for="prodGndr">Gender</label><br>
-                        <select id="prodGndr" formControlName="gender">
-                            <option disabled selected class="placeholder">
-                                ---Select a Gender---
-                            </option>
-                            <option value="Men">
-                                Men's
-                            </option>
-                            <option value="Women">
-                                Women's
-                            </option>
-                            <option value="Unisex">
-                                Unisex
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="input-bx-flex">
-                        <div class="input-bx">
-                            <label for="prodPrc">Price</label><br>
-                            <input type="number" id="prodPrc" formControlName="price">
+        <div class="prodForm-form-container">
+            <div class="tbl-heading">
+                <!-- <div class="tbl-title"> -->
+                    <span (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</span>
+                    <a routerLink="/admin/products" class="add-btn"><i class="fa-regular fa-eye"></i>View Products</a>
+                <!-- </div> -->
+            </div>
+            <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()">
+                <div class="form-flex-bx">
+                    <div class="prod-details-bx">
+                        <div class="tbl-heading">
+                            <h3>New-Details</h3>
                         </div>
 
                         <div class="input-bx">
-                            <label for="prodSz">Size</label><br>
-                            <input type="text" id="prodSz" formControlName="size">
+                            <label for="productName">Product Name</label><br>
+                            <input type="text" id="productName" placeholder="Type product title" formControlName="prodName">
                         </div>
+
+                        <div class="input-bx">
+                            <label for="productBrand">Product Brand</label><br>
+                            <select name="brand" id="" formControlName="brand">
+                                <option value="">--- Select Brand ---</option>
+                                <option [value]="brand._id" *ngFor="let brand of brands">
+                                    {{brand.brandName}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="input-bx">
+                            <label for="gender">Gender</label><br>
+                            <select name="gender" id="" formControlName="gender">
+                                <option value="">--- Select Gender ---</option>
+                                <option value="Men">Men's</option>
+                                <option value="Women">Women's</option>
+                                <option value="Unisex">Unisex</option>
+                            </select>
+                        </div>
+
+                        <div class="input-flex-bx">
+                            <div class="input-bx">
+                                <label for="prodPrice">Price</label><br>
+                                <input type="text" id="prodPrice" placeholder="0.00" formControlName="price">
+                            </div>
+
+                            <div class="input-bx">
+                                <label for="prodSize">size</label><br>
+                                <input type="text" id="prodSize" placeholder="size/ml" formControlName="size">
+                            </div>
+                        </div>
+
+                        <div class="input-bx">
+                            <label for="prodDesc">Description</label><br>
+                            <textarea name="" id="prodDesc" cols="30" rows="10" placeholder="Type Product description" formControlName="description"></textarea>
+                        </div>
+
                     </div>
 
-                    <div class="input-bx">
-                        <label for="prodDesc">Description</label><br>
-                        <textarea id="prodDesc" formControlName="description"></textarea>
-                    </div>
-
-                    <div class="input-bx">
-                        <label for="logoImg">Product Image</label><br>
-                        <input type="file" id="logoImg" formControlName="imageSrc" (change)="file($event)">
-                    </div>
-
-                    <div class="input-bx">
-                        <label for="logoImg">Image description</label><br>
-                        <input type="text" id="logoImg" formControlName="imageAlt">
-                    </div>
                     
-                    <div class="sub-btn-contain">
-                        <button class="sub-btn" style="float: left;"><i class="fa-solid fa-cloud-arrow-up"></i>Save Product</button>
+                    <div class="prod-image-bx">
+                        <div class="tbl-heading">
+                            <h3>Product-Image</h3>
+                        </div>
+                        <div>
+                            <div class="prod-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png" alt="">
+                        </div>
+                        <input type="file" formControlName="imageSrc" (change)="file($event)">
+                        <div class="input-bx">
+                            <label for="">Image Description</label><br>
+                            <input type="text" formControlName="imageAlt"></div>
+                        
+
+                        <div class="save">
+                            <button ><i class="fa-solid fa-cloud-arrow-up"></i> Add Product</button>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
     </section>
 </div>
-
-    
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

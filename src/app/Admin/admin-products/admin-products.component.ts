@@ -12,7 +12,7 @@ import { AdminService } from 'src/app/admin.service';
 export class AdminProductsComponent implements OnInit {
 
   toggle: Boolean = true;
-  products: ProductModel[] = [];
+  products: any[] = [];
   deletePrompt: Boolean = false;
   idToDelete: string = '';
   

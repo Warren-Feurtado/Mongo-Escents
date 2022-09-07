@@ -1,35 +1,21 @@
 
 <app-top-nav></app-top-nav>
 <div class="container">
-    <h1 class="heading">All Fragrances</h1>
+    <div class="heading-bx">
+        <h3 (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</h3>
+        <h1 class="heading">Our Fragrances</h1>
+    </div>
 
     <div class="flexbox">
         <div class="mainLeft">
+            
             <div class="filterBox">
-                <!-- <details class="filter">
-                    <summary routerLink="/men-colognes">Men Colognes <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    
-                </details> -->
                 <details class="filter">
                     <summary>Shop Fragrances <i class="fa-solid fa-angle-down fltr"></i></summary>
                     <p><a routerLink="/men-colognes">Colognes For Men</a></p>
                     <p><a routerLink="/women-perfumes">Perfumes For Women</a></p>
                     <p><a routerLink="/unisex-fragrances">Unisex Fragrances</a></p>
-                    <!-- <p><a routerLink="">Unisex</a></p>
-                    <p><a routerLink="">Unisex</a></p> -->
                 </details>
-                <!-- <details class="filter">
-                    <summary>Unisex Fragrances <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    <p><a routerLink="/mens-page">Men</a></p>
-                    <p><a routerLink="/womens-page">Women</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                </details>
-                <details class="filter">
-                    <summary>Brands <mat-icon class="fas fa-angle-down">keyboard_arrow_down</mat-icon></summary>
-                    <p><a routerLink="/mens-page">Men</a></p>
-                    <p><a routerLink="/womens-page">Women</a></p>
-                    <p><a routerLink="">Unisex</a></p>
-                </details> -->
             </div>
         </div>
         
@@ -52,7 +38,7 @@
                                 </div>
                                 
                                 <div class="productPrice">
-                                    <span class="price">${{product.price }}</span> <span class="size">{{product.size }}</span>
+                                    <span class="price">{{product.price | currency}}</span> <span class="size">{{product.size }}</span>
                                 </div>
                             </div>
                         </a>
