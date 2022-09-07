@@ -35,6 +35,8 @@ export class CartService {
   };
 
   removeFromCart(id: any): Observable<CartModel> {
+    console.log(id);
+
     return this.http.delete<CartModel>(`${this.API_SERVER}/${id}`, this.HTTP_HEADERS).pipe(
       tap((data) => {
         console.log(`Product Successfully Removed from Cart.`);

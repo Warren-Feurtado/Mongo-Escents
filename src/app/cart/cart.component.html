@@ -29,7 +29,7 @@
                             <h3 class="prodPrice">{{item.cart_item[0].price * quantity | currency}}</h3>
                         </td>
                         <td>
-                            <button (click)="removeFromCart(item._id)"><mat-icon class="cartProdDelete" >delete_forever</mat-icon></button>
+                            <button (click)="removeFromCart(item._id)"><mat-icon class="cartProdDelete" data-id="{{item._id}}">delete_forever</mat-icon></button>
                         </td>
                     </tr>
                 </table>

@@ -13,7 +13,7 @@ import { Location } from '@angular/common';
 })
 export class CartComponent implements OnInit {
 
-  items: any = [];
+  items: any[] = [];
   itemBrand: any[] = [];
   cartLength: number = 0;
   totalPrice: number = 0;
@@ -46,13 +46,12 @@ export class CartComponent implements OnInit {
     this.cartService.getCartItems().subscribe((fetchedItems: any) => {
       this.items = fetchedItems.data;
       this.cartLength = fetchedItems.data.length;
-      console.log(fetchedItems.data._id);
-      // console.log()
+      console.log(this.items);
       
 
-      this.items.forEach((data: any) => {
+      this.items.forEach((data) => {
         this.totalPrice = this.totalPrice + data.cart_item[0].price;
-        // console.log(data.cart_item[0].brand);
+        console.log(data.cart_item[0].brand);
 
         this.brandsService.getBrandById(data.cart_item[0].brand).subscribe((brandData) => {
 
@@ -68,19 +67,15 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(id: any): void {
-   this.cartService.removeFromCart(id).subscribe((cartProd: any) => {
-    console.log(cartProd);
-   }
-    // {
-    // next: (res) => {
-    //   alert('Product removed from cart successfully');
-    //   // this.router.navigate(['/cart']);
-    //   window.location.href = '/cart';
-    // },
-    // error: () => {
-    //   console.log('Error encontered. Could not remove product')
-    // }
-   );
+   this.cartService.removeFromCart(id).subscribe({
+    next: (res) => {
+      alert('Product removed from cart successfully');
+      window.location.href = '/cart';
+    },
+    error: () => {
+      console.log('Error encontered. Could not remove product')
+    }
+   });
   }
 
   // prodDelete(product: any){
