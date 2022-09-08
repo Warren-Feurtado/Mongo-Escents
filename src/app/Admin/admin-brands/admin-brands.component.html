@@ -70,7 +70,9 @@
                 <div class="brand-bx" *ngFor="let brand of brands">
                     <a routerLink="">
                         <div class="brand-logo">
-                            <img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+                            <a routerLink="/admin/edit-brand/{{brand._id}}">
+                                <img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+                            </a>
                         </div>
                     </a>
                     <div class="brand-name">

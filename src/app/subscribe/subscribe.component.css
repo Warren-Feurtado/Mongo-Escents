@@ -1,0 +1,63 @@
+.subsription-bx{
+    width: 100vw;
+    height: 30vw;
+    margin: 2vw auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.095), rgba(0, 0, 0, 0.308)), url('./assets/Images/subscribe-component-bg.jpg');
+    background-size: cover;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subsription-bx .subscribeForm{
+    text-align: center;
+}
+
+.subsription-bx .subscribeForm h1{
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+
+}
+
+.subscribeForm h1 span{
+    font-weight: 600;
+    /* color: rgba(255, 255, 255, 0.862); */
+
+}
+
+.subsription-bx .subscribeForm p{
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+    color: white;
+}
+
+.subscribeForm .subscribeFormInput{
+    height: 3vw;
+}
+
+.subscribeFormInput input{
+    height: 100%;
+    width: 30vw;
+    font-size: 1.1vw;
+    padding-left: 1vw;
+    background-color: rgba(255, 255, 255, 0.799);
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgb(117, 117, 117);
+}
+
+.subscribeFormInput button{
+    height: 100%;
+    width: 10vw;
+    font-size: 1.1vw;
+    color: white;
+    background: black;
+    border-radius: 0 3px 3px 0;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+.subscribeFormInput button:hover{
+    opacity: 0.8;
+}

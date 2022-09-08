@@ -74,7 +74,11 @@ carousel{
 }
 
 .brandLogosContain .brandLogos{
-    width: 15%;
+    width: 13vw;
+    height: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1%;
     overflow: hidden;
     background-color: rgb(247,247,247);
@@ -83,7 +87,7 @@ carousel{
 
 .brandLogos:hover img{
     transform: scale(1.1);
-    opacity: 0.5;
+    /* opacity: 1; */
 }
 
 .brandLogos img{
@@ -209,7 +213,8 @@ carousel{
 
 /* -------------- Products' Slider / Arrow Controls ------------------ */
 .slideArrowLeft{
-    padding: 2vw 0;
+    width: 1.6vw;
+    height: 5vw;
     position: absolute;
     top: 50%;
     left: 1.5vw;
@@ -219,11 +224,12 @@ carousel{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: rgb(28, 114, 147);
-    background: white;
+    background-color: rgba(28, 113, 147, 0.771);
+    color: white;
 }
 .slideArrowRight{
-    padding: 2vw 0;
+    width: 1.6vw;
+    height: 5vw;
     position: absolute;
     top: 50%;
     right: 1.5vw;
@@ -233,8 +239,8 @@ carousel{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: rgb(28, 114, 147);
-    background: white;
+    background-color: rgba(28, 113, 147, 0.771);
+    color: white;
 }
 
 .slideArrowIcon{
@@ -328,61 +334,6 @@ carousel{
     font-size: 1vw;
 }
 
-/* -------------- Section9 ------------------ */
-.sect9{
-    width: 93vw;
-    height: 30vw;
-    margin: auto;
-    background: url('https://cdn.shopify.com/s/files/1/0269/7763/2389/files/newsletter_banner.jpg?v=1636134871');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sect9 .newsletterContain{
-    text-align: center;
-}
-
-.sect9 .newsletterContain h1{
-    font-size: 2.5vw;
-    margin-bottom: 1vw;
-
-}
-
-.newsletterContain h1 span{
-    font-weight: 400;
-}
-
-.sect9 .newsletterContain p{
-    font-size: 1.5vw;
-    margin-bottom: 1.5vw;
-}
-
-.newsletterContain .newsletterInput{
-    height: 3vw;
-}
-
-.newsletterInput input{
-    height: 100%;
-    width: 30vw;
-    font-size: 1.1vw;
-    padding-left: 1vw;
-    border-radius: 5px 0 0 5px;
-    border: 1px solid rgb(117, 117, 117);
-}
-
-.newsletterInput button{
-    height: 100%;
-    width: 10vw;
-    font-size: 1.1vw;
-    color: white;
-    background: black;
-    border-radius: 0 3px 3px 0;
-    border: 1px solid rgb(138, 138, 138);
-    border-left: none;
-    cursor: pointer;
-}
 
 
 

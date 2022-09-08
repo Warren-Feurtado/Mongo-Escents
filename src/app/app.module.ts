@@ -33,6 +33,7 @@ import { CartComponent } from './cart/cart.component';
 
 import { AdminGuard } from './admin.guard';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrandsComponent,
     CartComponent,
     ProductDetailsComponent,
-    LogInFormComponent
+    LogInFormComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,
