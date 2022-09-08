@@ -2,7 +2,7 @@
     width: 100vw;
     height: 30vw;
     margin: 2vw auto;
-    background: linear-gradient(rgba(0, 0, 0, 0.095), rgba(0, 0, 0, 0.308)), url('./assets/Images/subscribe-component-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.095), rgba(0, 0, 0, 0.308)), url('../assets/Images/subscribe-component-bg.jpg');
     background-size: cover;
     /* background-color: aquamarine; */
     display: flex;
