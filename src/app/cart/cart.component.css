@@ -130,10 +130,15 @@
 }
 
 .emptyCartimgBx{
-    position: relative;
+    /* position: relative; */
     width: 45vw;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     z-index: 1;
+    /* border: 1px solid red; */
+}
+
+.emptyCartimgBx img{
+    width: 100%;
 }
 
 .right{

@@ -64,7 +64,7 @@
                     <a routerLink="/admin/products" class="add-btn"><i class="fa-regular fa-eye"></i>View Products</a>
                 <!-- </div> -->
             </div>
-            <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()">
+            <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()" enctype="multipart/form-data">
                 <div class="form-flex-bx">
                     <div class="prod-details-bx">
                         <div class="tbl-heading">
