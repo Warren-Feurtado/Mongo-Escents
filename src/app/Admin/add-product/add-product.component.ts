@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BrandsService } from 'src/app/brands.service';
 import { BrandModel } from 'src/app/Models/brand.model';
 import { ProductModel } from 'src/app/Models/product.model';
@@ -19,6 +19,7 @@ export class AddProductComponent implements OnInit {
 
   toggle: Boolean = true;
   brands: BrandModel[] = [];
+  formData = new FormData();
 
   constructor(
     private productsService: ProductsService,
@@ -29,6 +30,13 @@ export class AddProductComponent implements OnInit {
   ) { }
 
  
+  @ViewChild('imageSrc') imageSrc!: ElementRef<HTMLInputElement>;
+  onFileSelected(event: Event): void {
+    const file = this.imageSrc.nativeElement?.files?.[0];
+    if(!file) return;
+    console.log(file);
+    this.formData.append('imageSrc', file), file.name;
+  };
 
   addProductForm = new FormGroup({
     prodName: new FormControl(''),
@@ -37,7 +45,7 @@ export class AddProductComponent implements OnInit {
     description: new FormControl(''),
     price: new FormControl(''),
     size: new FormControl(''),
-    imageSrc: new FormControl(),
+    imageSrc: new FormControl(''),
     imageAlt: new FormControl('')
   })
 
@@ -68,7 +76,8 @@ export class AddProductComponent implements OnInit {
     this.productsService.addNewProduct(this.addProductForm.value).subscribe({
       next: (res) => {
         alert('Product Added Successfully');
-        console.log(res);
+        // console.log(res);
+        console.log(this.addProductForm.value);
         this.router.navigate(['/admin/products']);
       },
       error: (err) => {
@@ -79,8 +88,10 @@ export class AddProductComponent implements OnInit {
     });
   }
 
-    file(ev:any) {
-      this.addProductForm.controls['imageSrc'].setValue(ev.target.files[0]);
+    file(image:any) {
+      this.addProductForm.controls['imageSrc'].setValue(image.files[0]);
+      console.log('file works');
+      console.log(this.addProductForm.controls['imageSrc'].setValue(image.files[0]));
     }
 
   ngOnInit(): void {

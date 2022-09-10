@@ -124,7 +124,7 @@
                             <div class="prod-image">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png" alt="">
                         </div>
-                        <input type="file" formControlName="imageSrc" (change)="file($event)">
+                        <input type="file" formControlName="imageSrc" accept="image/*" (change)="onFileSelected($event)" #image>
                         <div class="input-bx">
                             <label for="">Image Description</label><br>
                             <input type="text" formControlName="imageAlt"></div>
