@@ -123,7 +123,7 @@
                         <tr *ngFor="let product of products">
                             <td class="product-td">
                                 <div class="prod-tbl-img">
-                                    <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                                    <img src="{{product.imageSrc}}" alt="{{product.imageAlt}}">
                                 </div>
                                 <div class="prod-name" >
                                     {{product.prodName}}
@@ -161,7 +161,7 @@
                         <tr *ngFor="let brand of brands">
                             <td>
                                 <div class="brand-logo-contain">
-                                    <img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
+                                    <img src="{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
                                 </div>
                             </td>
                             <td class="brandName">

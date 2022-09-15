@@ -15,7 +15,7 @@
                     <tr *ngFor="let item of items; let i=index">
                         <td>
                             <div class="imgBx">
-                                <img src="https://e-scents.herokuapp.com/{{item.cart_item[0].imageSrc}}" [alt]="item.imageAlt">
+                                <img src="{{item.cart_item[0].imageSrc}}" [alt]="item.imageAlt">
                             </div>
                         </td>
                         <td>
@@ -25,6 +25,12 @@
                         <td >
                             <p class="prodName">{{item.cart_item[0].gender}}</p>
                         </td>
+                        <td>
+                            <div class='prodQty'>{{quantity}}</div>
+                        </td>
+                        <!-- <td>
+                            <span class="dec" (click)="decQuantity()">-</span><input class='prodQty' type="number" value="{{quantity}}"><span class="inc" (click)="incQuantity()">+</span>
+                        </td> -->
                         
                         <td>
                             <h3 class="prodPrice">{{item.cart_item[0].price * quantity | currency}}</h3>
@@ -61,7 +67,7 @@
                     <h3>Total</h3>
                     <span class="amnts">{{totalPrice * tax + totalPrice | currency}}</span>
                 </div>
-                <button class="checkOutBtn">PROCEED TO CHECKOUT</button>
+                <button class="checkOutBtn" (click)="onEmptyCheckOut()">PROCEED TO CHECKOUT</button>
             </div>
     
         </div>

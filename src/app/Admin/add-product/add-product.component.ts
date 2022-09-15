@@ -19,7 +19,7 @@ export class AddProductComponent implements OnInit {
 
   toggle: Boolean = true;
   brands: BrandModel[] = [];
-  formData = new FormData();
+  // formData = new FormData();
 
   constructor(
     private productsService: ProductsService,
@@ -30,16 +30,23 @@ export class AddProductComponent implements OnInit {
   ) { }
 
  
-  @ViewChild('imageSrc') imageSrc!: ElementRef<HTMLInputElement>;
-  onFileSelected(event: Event): void {
-    const file = this.imageSrc.nativeElement?.files?.[0];
-    if(!file) return;
+  @ViewChild('image') image!: ElementRef<HTMLInputElement>;
+  
+  onFileSelected(event: any): void {
+    // const file = this.image.nativeElement?.files?.[0];
+    // if(!file) return;
+    const file = event.target.files[0];
     console.log(file);
-    this.formData.append('imageSrc', file), file.name;
+    if(!file) return;
+    console.log('This is selected file', file);
+    // this.addProductForm.controls['imageSrc'].setValue(file.name);
+    this.addProductForm.get('imageSrc')?.setValue(file.name);
+
+    // this.formData.append('image', file), file.name;
   };
 
   addProductForm = new FormGroup({
-    prodName: new FormControl(''),
+    prodName: new FormControl(''), 
     brand: new FormControl(''),
     gender: new FormControl(''),
     description: new FormControl(''),
@@ -70,9 +77,9 @@ export class AddProductComponent implements OnInit {
       this.brands = fetchedBrands.data;
     });
   }
-  
   //SAVE NEW PRODUCT
   saveProduct(){
+
     this.productsService.addNewProduct(this.addProductForm.value).subscribe({
       next: (res) => {
         alert('Product Added Successfully');
@@ -87,12 +94,42 @@ export class AddProductComponent implements OnInit {
       }
     });
   }
+  
+  // saveProduct(){
+  //   console.log(this.addProductForm.value);
 
-    file(image:any) {
-      this.addProductForm.controls['imageSrc'].setValue(image.files[0]);
-      console.log('file works');
-      console.log(this.addProductForm.controls['imageSrc'].setValue(image.files[0]));
-    }
+  //   const formData = new FormData(); 
+  //   formData.append('prodName', this.addProductForm.get('prodName')?.value);
+  //   formData.append('brand', this.addProductForm.get('brand')?.value);
+  //   formData.append('gender', this.addProductForm.get('gender')?.value);
+  //   formData.append('size', this.addProductForm.get('size')?.value);
+  //   formData.append('price', this.addProductForm.get('price')?.value);
+  //   formData.append('imageSrc', this.addProductForm.get('imageSrc')?.value);
+  //   formData.append('imageAlt', this.addProductForm.get('imageAlt')?.value);
+
+    
+
+  //   console.log('This is the form data', formData.get('imageSrc'));
+
+  //   this.productsService.addNewProduct(this.addProductForm.value).subscribe({
+  //     next: (res) => {
+  //       alert('Product Added Successfully');
+  //       // console.log(res);
+  //       console.log(this.addProductForm.value);
+  //       this.router.navigate(['/admin/products']);
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //       alert('Error encountered while trying to add this product.');
+        
+  //     }
+  //   });
+  // }
+    // file(image:any) {
+    //   this.addProductForm.controls['imageSrc'].setValue(image.files[0]);
+    //   console.log('file works');
+    //   console.log(this.addProductForm.controls['imageSrc'].setValue(image.files[0]));
+    // }
 
   ngOnInit(): void {
     this.fetchBrands();

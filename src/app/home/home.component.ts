@@ -1,9 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { BrandsService } from '../brands.service';
 import { ProductsService } from '../products.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BrandModel } from '../Models/brand.model';
 import { ProductModel } from '../Models/product.model';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -14,6 +15,8 @@ import { ProductModel } from '../Models/product.model';
 })
 export class HomeComponent implements OnInit {
 
+  server_link = environment.production === true ? environment.API_PRODUCTION_SERVER : environment.API_SERVER;
+  imgPath = 'public/product-image';
 
   brands: any[] = [];
   products: any[] = [];
@@ -41,43 +44,9 @@ export class HomeComponent implements OnInit {
   fetchProducts(): void {
     this.productsService.getAllProducts().subscribe((fetchedProducts: any) => {
       this.products = fetchedProducts.data;
-      // this.productCount = fetchedProducts.data.length;
-      // this.products = fetchedProducts.data.product_brands;
-      
-
-      // console.log(`Products Successfully loaded to Admin-Dashboard-Component. ${JSON.stringify(fetchedProducts.data)}`);
-      console.log(`Products Successfully loaded to Admin-Dashboard-Component.`, this.products);
-      
+      console.log(`Products Successfully loaded to Admin-Dashboard-Component.`);
     });
   };
-  
 
-  // Owl-Carousel/ Top Slide/ Section1
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: true,
-    navSpeed: 700,
-    navText: ['', ''],
-    nav: false,
-    autoplay: true,
-    responsive: {
-      0: {items: 1},
-      400: {items: 2},
-      740: {items: 1},
-      940: {items: 1}
-    },
-  }
-
-
-  slideNext(){
-    this.marginChange  += 100;
-  }
-
-  slidePrevious(){
-    this.marginChange  -= 100;
-  }
 
 }

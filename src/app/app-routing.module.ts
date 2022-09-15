@@ -17,6 +17,7 @@ import { LogInFormComponent } from './Admin/log-in-form/log-in-form.component';
 import { AdminGuard } from './admin.guard';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'women-perfumes', component: WomenPerfumesComponent},
   {path: 'unisex-fragrances', component: UnisexFragrancesComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'about', component: AboutComponent},
   {path: 'details/:id', component: ProductDetailsComponent},
 
 

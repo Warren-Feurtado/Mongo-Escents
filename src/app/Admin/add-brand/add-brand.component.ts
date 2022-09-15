@@ -22,7 +22,7 @@ export class AddBrandComponent implements OnInit {
   // });
 
   addBrandForm = new FormGroup({
-    logoSrc: new FormControl(),
+    logoSrc: new FormControl(''),
     brandName: new FormControl(''),
     logoAlt: new FormControl(''),
   })

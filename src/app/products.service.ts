@@ -63,17 +63,25 @@ export class ProductsService {
     );
   };
 
+  // addNewProduct(product: ProductModel): Observable<ProductModel> {
+  //   let formData = new FormData();
+  //   formData.append("prodName", product.prodName.toString());
+  //   formData.append("gender", product.gender.toString());
+  //   formData.append("brand", product.brand.toString());
+  //   formData.append("description", product.description.toString());
+  //   formData.append("imageSrc", product.imageSrc);
+  //   formData.append("imageAlt", product.imageAlt.toString());
+  //   formData.append("size", product.size.toString());
+  //   formData.append("price", product.price.toString());
+  //   return this.http.post<ProductModel>(this.API_SERVER, formData).pipe(
+  //     tap((data) => {
+  //       console.log('Product added Successfully!'),
+  //       catchError(error => of(data));
+  //     })
+  //   );
+  // };
   addNewProduct(product: ProductModel): Observable<ProductModel> {
-    let formData = new FormData();
-    formData.append("prodName", product.prodName.toString());
-    formData.append("gender", product.gender.toString());
-    formData.append("brand", product.brand.toString());
-    formData.append("description", product.description.toString());
-    formData.append("imageSrc", product.imageSrc);
-    formData.append("imageAlt", product.imageAlt.toString());
-    formData.append("size", product.size.toString());
-    formData.append("price", product.price.toString());
-    return this.http.post<ProductModel>(this.API_SERVER, formData).pipe(
+    return this.http.post<ProductModel>(this.API_SERVER, product).pipe(
       tap((data) => {
         console.log('Product added Successfully!'),
         catchError(error => of(data));

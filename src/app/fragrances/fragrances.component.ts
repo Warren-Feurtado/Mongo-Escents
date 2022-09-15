@@ -5,6 +5,7 @@ import { ProductModel } from '../Models/product.model';
 import { CartModel } from '../Models/cart.model';
 import { ProductsService } from '../products.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FragrancesComponent implements OnInit {
 
+  server_link = environment.production === true ? environment.API_PRODUCTION_SERVER : environment.API_SERVER;
+  imgPath = 'public/product-image';
   products: any[] = [];
 
   
@@ -38,23 +41,8 @@ export class FragrancesComponent implements OnInit {
     });
   }
 
-  addToCart(): void {
-    // this.cartService.addToCart(this.addCartForm.value).subscribe({
-    //   next: (res) => {
-    //     alert('Product added to cart');
-    //     // this.router.navigate(['/cart']);
-    //     console.log(res);
-    //   },
-    //   error: (err) => {
-    //     alert('Error encountered While adding item to cart');
-    //     console.log(err);
-    //   }
-    // });
-  }
-
   ngOnInit(): void {
     this.fetchProducts();
-    // console.log(this.addCartForm.value)
   }
 
 }

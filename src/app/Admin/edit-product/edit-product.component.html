@@ -114,9 +114,13 @@
                         </div>
                         <div>
                             <div class="prod-image">
-                            <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="">
+                            <img src="{{product.imageSrc}}" alt="">
                         </div>
-                        <input type="file" >
+
+                        <div class="input-bx">
+                            <label for="">Image URL</label><br>
+                            <input type="text" formControlName="imageSrc">
+                        </div>
                         <div class="input-bx">
                             <label for="">Image Description</label><br>
                             <input type="text" formControlName="imageAlt"></div>

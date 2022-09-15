@@ -110,7 +110,9 @@
 }
 
 .prodQty{
-    padding-right: 0;
+    padding: 1vw;
+    /* border: 1px solid red; */
+    text-align: center;
 }
 
 .prodPrice{
@@ -146,6 +148,7 @@
     padding-right: 4vw;
 }
 
+/*---------------- CART RIGHT SECTION ------------ */
 .right .checkout{
     width: 75%;
     border: 1px solid rgba(0, 0, 0, 0.178);
@@ -156,7 +159,7 @@
 
 .checkout .checkoutHeading{
     margin-bottom: 2vw;
-    font-size: 2vw;
+    font-size: 1.7vw;
 }
 
 .checkoutHeading::after{

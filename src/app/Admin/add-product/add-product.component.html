@@ -64,7 +64,8 @@
                     <a routerLink="/admin/products" class="add-btn"><i class="fa-regular fa-eye"></i>View Products</a>
                 <!-- </div> -->
             </div>
-            <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()" enctype="multipart/form-data">
+            <!-- <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()" enctype="multipart/form-data"> -->
+            <form class="prod-edit-form" [formGroup]="addProductForm" (ngSubmit)="saveProduct()">
                 <div class="form-flex-bx">
                     <div class="prod-details-bx">
                         <div class="tbl-heading">
@@ -124,15 +125,19 @@
                             <div class="prod-image">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Picture_icon_COLORS.png" alt="">
                         </div>
-                        <input type="file" formControlName="imageSrc" accept="image/*" (change)="onFileSelected($event)" #image>
+                        <!-- <input type="file" formControlName="imageSrc" accept="image/*" (change)="onFileSelected($event)" #image> -->
+                        <div class="input-bx">
+                            <label for="">Image URL</label><br>
+                            <input type="text" formControlName="imageSrc">
+                        </div>
                         <div class="input-bx">
                             <label for="">Image Description</label><br>
                             <input type="text" formControlName="imageAlt"></div>
                         
 
-                        <div class="save">
-                            <button ><i class="fa-solid fa-cloud-arrow-up"></i> Add Product</button>
-                        </div>
+                            <div class="save">
+                                <button ><i class="fa-solid fa-cloud-arrow-up"></i> Add Product</button>
+                            </div>
                         </div>
                     </div>
                 </div>

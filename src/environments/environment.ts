@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_SERVER: 'http://localhost:2000'
+  API_SERVER: 'http://localhost:2000',
+  API_PRODUCTION_SERVER: 'https://e-scents.herokuapp.com'
 };
 
 /*

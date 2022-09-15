@@ -30,6 +30,11 @@ export class EditProductComponent implements OnInit {
     private location: Location
   ) { }
 
+  ngOnInit(): void {
+    this.fetchProductToEdit();
+    this.fetchAllBrands()
+  }
+
   prodEditForm = this.fb.group({
     prodName: [''],
     brand: [''],
@@ -79,7 +84,7 @@ export class EditProductComponent implements OnInit {
   onUpdateProduct(): void {
     this.productsService.editExistingProduct(this.route.snapshot.params['id'], this.prodEditForm.value).subscribe({
       next: (res) => {
-        alert('Product Updated successfullySuccessfully');
+        alert('Product Updated Successfully');
         console.log(res);
         this.router.navigate(['/admin/products']);
       },
@@ -99,11 +104,6 @@ export class EditProductComponent implements OnInit {
 
   file(ev:any) {
     this.prodEditForm.controls['imageSrc'].setValue(ev.target.files[0]);
-  }
-
-  ngOnInit(): void {
-    this.fetchProductToEdit();
-    this.fetchAllBrands()
   }
 
 }

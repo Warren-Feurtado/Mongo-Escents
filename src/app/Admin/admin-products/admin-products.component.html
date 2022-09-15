@@ -68,7 +68,8 @@
                     <div class="prod-card">
                         <a routerLink="/admin/edit-product/{{product._id}}">
                             <div class="product-img">
-                                <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                                <!-- <img src="{{server_link}}/{{imgPath}}/{{product.imageSrc}}" alt="{{product.imageAlt}}"> -->
+                                <img src="{{product.imageSrc}}" alt="{{product.imageAlt}}">
                             </div>
                         </a>
                         <div class="prod-card-txt">

@@ -11,7 +11,7 @@ import { BrandsService } from '../brands.service';
 })
 export class MenColognesComponent implements OnInit {
 
-  products: any[] = [];
+  products: any = [];
   itemBrand: any[] = [];
 
   constructor(

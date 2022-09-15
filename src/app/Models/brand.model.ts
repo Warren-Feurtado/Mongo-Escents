@@ -3,6 +3,6 @@
 export interface BrandModel {
     _id: String;
     brandName: String;
-    logoSrc: File;
+    logoSrc: String;
     logoAlt: String;
 }

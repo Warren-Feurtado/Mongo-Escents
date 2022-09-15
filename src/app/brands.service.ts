@@ -35,11 +35,11 @@ export class BrandsService {
   };
 
   addNewBrand(brand: BrandModel): Observable<BrandModel> {
-    let formData = new FormData();
-    formData.append("logoSrc", brand.logoSrc);
-    formData.append("brandName", brand.brandName.toString());
-    formData.append("logoAlt", brand.logoAlt.toString());
-    return this.http.post<BrandModel>(`${this.API_SERVER}`, formData).pipe(
+    // let formData = new FormData();
+    // formData.append("logoSrc", brand.logoSrc);
+    // formData.append("brandName", brand.brandName.toString());
+    // formData.append("logoAlt", brand.logoAlt.toString());
+    return this.http.post<BrandModel>(`${this.API_SERVER}`, brand).pipe(
       tap((data) => {
         console.log('Brand added successfully'),
         catchError(error => of(data));

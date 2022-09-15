@@ -3,6 +3,8 @@ import { ProductsService } from 'src/app/products.service';
 import { ProductModel } from 'src/app/Models/product.model';
 import { Location } from '@angular/common';
 import { AdminService } from 'src/app/admin.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-admin-products',
@@ -10,6 +12,12 @@ import { AdminService } from 'src/app/admin.service';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
+
+  server_link = environment.production === true
+   ? environment.API_PRODUCTION_SERVER 
+   : environment.API_SERVER;
+   
+  imgPath = 'public/product-image';
 
   toggle: Boolean = true;
   products: any[] = [];
@@ -22,6 +30,10 @@ export class AdminProductsComponent implements OnInit {
     private adminService: AdminService,
     private location: Location
   ) { }
+
+  ngOnInit(): void {
+    this.fetchProducts();
+  }
 
   //SIDE-MENU TOGGLE
   hideMenu(){
@@ -38,6 +50,7 @@ export class AdminProductsComponent implements OnInit {
     this.adminService.logOut();
   };
 
+  // Fetch all products.
   fetchProducts(): void {
     this.productsService.getAllProducts().subscribe((fetcheProducts: any) => {
       this.products = fetcheProducts.data;
@@ -68,10 +81,6 @@ export class AdminProductsComponent implements OnInit {
   //CANCEL DELETE (HIDE DELETE MESSAGE BOX)
   cancelDelete(){
     this.deletePrompt = false;
-  }
-
-  ngOnInit(): void {
-    this.fetchProducts();
   }
 
 }

@@ -6,7 +6,8 @@ export interface ProductModel{
     brand: String;
     gender: String;
     description: String;
-    imageSrc: File;
+    // imageSrc: File;
+    imageSrc: String;
     imageAlt: String;
     size: String;
     price: Number;

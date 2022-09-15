@@ -19,6 +19,7 @@ import { AdminProductsComponent } from './Admin/admin-products/admin-products.co
 import { AdminBrandsComponent } from './Admin/admin-brands/admin-brands.component';
 import { HomeComponent } from './home/home.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { AboutComponent } from './about/about.component';
 
 import { ProductsService } from './products.service';
 import { BrandsService } from './brands.service';
@@ -46,6 +47,7 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     AdminProductsComponent,
     AdminBrandsComponent,
     HomeComponent,
+    AboutComponent,
     TopNavComponent,
     FooterComponent,
     FragrancesComponent,

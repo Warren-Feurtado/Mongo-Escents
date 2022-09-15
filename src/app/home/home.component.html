@@ -43,7 +43,7 @@
         <h1>Our Top Brands</h1>
         <div class="brandLogosContain">
             <div class="brandLogos" *ngFor="let brand of brands | slice:0:12; let i = index;">
-                <a href="#"><img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" [alt]="brand.logoAlt"></a>
+                <a href="#"><img src="{{brand.logoSrc}}" [alt]="brand.logoAlt"></a>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                 <div class="productCard" *ngFor="let product of products" style="margin: marginChange">
                     <a [routerLink]="['/details', product._id]">
                         <div class="productimgBx">
-                        <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                        <img src="{{product.imageSrc}}" alt="{{product.imageAlt}}">
                         </div>
                         <div class="productName">
                             {{product.prodName}}
@@ -78,8 +78,8 @@
                 </div>
             </div>
         </div>
-        <button (click)="slidePrevious()" class="slideArrowLeft"><mat-icon class="slideArrowIcon">keyboard_arrow_left</mat-icon></button>
-        <button (click)="slideNext()" class="slideArrowRight"><mat-icon class="slideArrowIcon">keyboard_arrow_right</mat-icon></button>
+        <button class="slideArrowLeft"><mat-icon class="slideArrowIcon">keyboard_arrow_left</mat-icon></button>
+        <button class="slideArrowRight"><mat-icon class="slideArrowIcon">keyboard_arrow_right</mat-icon></button>
 
     </section>
 
@@ -99,13 +99,14 @@
     </section>
 
     <section class="sect6">
-        <h1>CELEBRITY FRAGRANCES</h1>
+        <h1>Unisex Fragrances</h1>
         <div class="productSlide">
             <div class="slide">
                 <div class="productCard" *ngFor="let product of products">
                     <a [routerLink]="['/details', product._id]">
                         <div class="productimgBx">
-                        <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" [alt]="product.imageAlt">
+                        <!-- <img src="{{server_link}}/{{imgPath}}/{{product.imageSrc}}" [alt]="product.imageAlt"> -->
+                        <img src="{{product.imageSrc}}" [alt]="product.imageAlt">
                         </div>
                         <div class="productName">
                             {{product.prodName}}
@@ -123,8 +124,8 @@
                 </div>
             </div>
         </div> 
-        <button (click)="slidePrevious()" class="slideArrowLeft"><mat-icon>keyboard_arrow_left</mat-icon></button>
-        <button (click)="slideNext()" class="slideArrowRight"><mat-icon>keyboard_arrow_right</mat-icon></button>
+        <button class="slideArrowLeft"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button class="slideArrowRight"><mat-icon>keyboard_arrow_right</mat-icon></button>
     </section>
 
     <section class="sect7">
@@ -187,7 +188,7 @@
     </section>
 
     <app-subscribe></app-subscribe>
-    
+
 </div>
 <app-footer></app-footer>
 

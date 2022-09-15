@@ -4,7 +4,8 @@
     <h3 (click)="onGoBack()" class="go-back-link"><i class="fa-solid fa-arrow-left"></i>Go Back</h3>
     <div class="flexBx" *ngIf="product">
         <div class="left">
-            <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" [alt]="product.imageAlt">
+            <!-- <img src="https://e-scents.herokuapp.com/{{product.imageSrc}}" [alt]="product.imageAlt"> -->
+            <img src="{{product.imageSrc}}" [alt]="product.imageAlt">
         </div>
         <div class="right">
           <h2 class="prodName">{{product.prodName}}</h2>

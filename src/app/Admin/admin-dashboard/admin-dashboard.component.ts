@@ -40,8 +40,7 @@ export class AdminDashboardComponent implements OnInit {
     this.brandsService.getAllBrands().subscribe((fetchedBrands: any) => {
         this.brands = fetchedBrands.data;
         this.brandCount = fetchedBrands.data.length;
-        console.log(`Brands Successfully loaded to Admin-Dashboard-Component.`, this.brands);
-        // console.log(`Brands Successfully loaded to Admin-Dashboard-Component. ${fetchedBrands}`);
+        console.log(`Brands Successfully loaded to Admin-Dashboard-Component.`);
     });
   };
 
@@ -49,13 +48,8 @@ export class AdminDashboardComponent implements OnInit {
   fetchProducts(): void {
     this.productsService.getAllProducts().subscribe((fetchedProducts: any) => {
       this.products = fetchedProducts.data;
-      this.productCount = fetchedProducts.data.length;
-      // this.products = fetchedProducts.data.product_brands;
-      
-
-      // console.log(`Products Successfully loaded to Admin-Dashboard-Component. ${JSON.stringify(fetchedProducts.data)}`);
-      console.log(`Products Successfully loaded to Admin-Dashboard-Component.`, this.products);
-      
+      this.productCount = fetchedProducts.data.length;      
+      console.log(`Products Successfully loaded to Admin-Dashboard-Component.`); 
     });
   };
 

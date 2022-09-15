@@ -68,11 +68,9 @@
             </div>
             <div class="brands-container">
                 <div class="brand-bx" *ngFor="let brand of brands">
-                    <a routerLink="">
+                    <a routerLink="/admin/edit-brand/{{brand._id}}">
                         <div class="brand-logo">
-                            <a routerLink="/admin/edit-brand/{{brand._id}}">
-                                <img src="https://e-scents.herokuapp.com/{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
-                            </a>
+                                <img src="{{brand.logoSrc}}" alt="{{brand.logoAlt}}">
                         </div>
                     </a>
                     <div class="brand-name">

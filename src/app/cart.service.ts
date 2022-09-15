@@ -16,6 +16,7 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
+  // Loads the cart items from the API
   getCartItems(): Observable<CartModel[]> {
     return this.http.get<CartModel[]>(`${this.API_SERVER}`).pipe(
       tap((data) => {
@@ -25,6 +26,7 @@ export class CartService {
     );
   };
 
+  // Add a product to cart
   addToCart(data: any): Observable<any> {
     return this.http.post<CartModel>(`${this.API_SERVER}`, data, this.HTTP_HEADERS).pipe(
       tap((data) => {
@@ -34,9 +36,8 @@ export class CartService {
     );
   };
 
+    // Removes an item from the cart.
   removeFromCart(id: any): Observable<CartModel> {
-    console.log(id);
-
     return this.http.delete<CartModel>(`${this.API_SERVER}/${id}`, this.HTTP_HEADERS).pipe(
       tap((data) => {
         console.log(`Product Successfully Removed from Cart.`);
@@ -45,6 +46,7 @@ export class CartService {
     );
   };
 
+  // Removes all products from the cart.
   clearCart(): Observable<CartModel[]> {
     return this.http.delete<CartModel[]>(`${this.API_SERVER}/delete`, this.HTTP_HEADERS).pipe(
       tap((data) => {
