@@ -13,9 +13,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminProductsComponent implements OnInit {
 
-  server_link = environment.production === true
-   ? environment.API_PRODUCTION_SERVER 
-   : environment.API_SERVER;
+  // server_link = environment.production === true
+  //  ? environment.API_PRODUCTION_SERVER 
+  //  : environment.API_SERVER;
    
   imgPath = 'public/product-image';
 
